@@ -10,12 +10,15 @@ url: "https://analisisdeportescl.github.io"
 baseurl: ""
 lang: "es-CL"
 
+# --- IMPORTANTE: No usar tema de Jekyll (usamos diseño propio) ---
+# Si GitHub agregó una línea "theme:" acá, elimínala.
+# Nuestro sitio usa layouts propios en _layouts/
+
 # --- Autor por defecto ---
 author:
   name: "Transparencia Deporte"
 
 # --- Estructura de URLs ---
-# Genera: /reportes/2025/04/02/titulo-del-articulo/
 permalink: /:categories/:year/:month/:day/:title/
 
 # --- Categorías desde subcarpetas de _posts ---
@@ -55,7 +58,6 @@ feed:
   path: "feed.xml"
 
 # --- Giscus (comentarios via GitHub Discussions) ---
-# IMPORTANTE: Activar Discussions en el repo y configurar Giscus en https://giscus.app
 giscus:
   repo: "analisisdeportescl/analisisdeportescl.github.io"
   repo_id: ""          # Completar desde giscus.app
@@ -68,7 +70,7 @@ giscus:
 
 # --- Reporte de errores (GitHub Issues) ---
 github_repo: "https://github.com/analisisdeportescl/analisisdeportescl.github.io"
-google_form_contacto: ""  # Completar con URL del Google Form
+google_form_contacto: ""
 
 # --- Excluir del build ---
 exclude:
