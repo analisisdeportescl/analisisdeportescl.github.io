@@ -6,7 +6,7 @@
 # --- Datos del sitio ---
 title: "Transparencia Deporte"
 description: "Periodismo financiero deportivo en Chile. Reportes, análisis y noticias sobre las finanzas del deporte chileno."
-url: "https://transparencia-deporte-cl.github.io"
+url: "https://analisisdeportescl.github.io"
 baseurl: ""
 lang: "es-CL"
 
@@ -57,7 +57,7 @@ feed:
 # --- Giscus (comentarios via GitHub Discussions) ---
 # IMPORTANTE: Activar Discussions en el repo y configurar Giscus en https://giscus.app
 giscus:
-  repo: "transparencia-deporte-cl/transparencia-deporte-cl.github.io"
+  repo: "analisisdeportescl/analisisdeportescl.github.io"
   repo_id: ""          # Completar desde giscus.app
   category: "Comentarios"
   category_id: ""      # Completar desde giscus.app
@@ -67,7 +67,7 @@ giscus:
   lang: "es"
 
 # --- Reporte de errores (GitHub Issues) ---
-github_repo: "https://github.com/transparencia-deporte-cl/transparencia-deporte-cl.github.io"
+github_repo: "https://github.com/analisisdeportescl/analisisdeportescl.github.io"
 google_form_contacto: ""  # Completar con URL del Google Form
 
 # --- Excluir del build ---
