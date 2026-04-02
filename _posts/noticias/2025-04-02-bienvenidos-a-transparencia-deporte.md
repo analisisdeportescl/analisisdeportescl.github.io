@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bienvenidos a Transparencia Deporte"
-date: 2025-04-02
+date: 2026-04-02
 category: noticias
 tags: [transparencia-deporte, lanzamiento]
 author: periodista
