@@ -1,47 +1,78 @@
 ---
 layout: page
-title: "Sobre el proyecto"
-permalink: /sobre-el-proyecto/
-description: "Qué es Transparencia Deporte, cómo trabajamos, quiénes somos y cómo colaborar."
+title: "Sobre el Proyecto"
+description: "Transparencia financiera en el deporte chileno, impulsada por inteligencia artificial."
+permalink: /sobre/
 ---
 
-## Qué es Transparencia Deporte
+## ¿Qué es Transparencia Deporte?
 
-Transparencia Deporte es un proyecto de periodismo financiero deportivo enfocado en Chile. Analizamos balances, memorias anuales, estados financieros y documentos públicos de federaciones, clubes y organismos del deporte chileno.
+Somos un proyecto ciudadano e independiente de fiscalización financiera del deporte chileno. Utilizamos inteligencia artificial para analizar documentos financieros públicos de clubes, federaciones y organismos deportivos, y los traducimos a un lenguaje que cualquiera pueda entender.
 
-Nuestro objetivo es hacer accesible y comprensible la información financiera del deporte, que muchas veces es pública pero difícil de encontrar o interpretar.
+Creemos que la transparencia no debería requerir un título en contabilidad. Los documentos financieros de las organizaciones deportivas son públicos, pero rara vez alguien los lee. Nosotros los leemos, los analizamos y los explicamos.
+
+## ¿Por qué inteligencia artificial?
+
+Porque la tecnología nos permite procesar grandes volúmenes de información financiera de forma rápida y consistente. La AI no reemplaza el criterio humano — lo complementa. Cada publicación es generada por nuestros asistentes AI y luego revisada por un editor humano antes de ser publicada.
+
+Somos completamente transparentes sobre el uso de AI: cada artículo indica claramente cuál asistente lo generó y que fue revisado por una persona.
+
+## Nuestro equipo AI
+
+<div class="team-grid">
+  <div class="team-card">
+    <div class="emoji">🔎</div>
+    <h3>LIKAN</h3>
+    <div class="role">Analista Financiero</div>
+    <p><strong>Lectura Inteligente de Cuentas y Análisis Numérico.</strong> Analiza balances, memorias y estados financieros. Extrae cifras clave, calcula ratios y detecta anomalías.</p>
+    <p class="origin">"Likan" significa piedra de obsidiana en lengua kunza del pueblo atacameño — representa claridad y precisión.</p>
+  </div>
+  <div class="team-card">
+    <div class="emoji">📝</div>
+    <h3>MILLARAY</h3>
+    <div class="role">Periodista</div>
+    <p><strong>Motor Inteligente de Lectura, Lenguaje y Reportería.</strong> Redacta notas periodísticas y contextualiza la información financiera para hacerla comprensible.</p>
+    <p class="origin">"Millaray" significa flor de oro en mapudungún — porque buscamos hacer florecer información que estaba oculta.</p>
+  </div>
+  <div class="team-card">
+    <div class="emoji">👤</div>
+    <h3>Editor Humano</h3>
+    <div class="role">Revisión y Publicación</div>
+    <p>Toda publicación es revisada por una persona antes de ser publicada. La AI asiste, no reemplaza el criterio editorial. El editor verifica datos, contexto y tono.</p>
+  </div>
+</div>
+
+## ¿Por qué nombres de pueblos originarios?
+
+Porque este proyecto nace en Chile y con perspectiva chilena. Elegimos nombres de lenguas originarias como un reconocimiento a las raíces culturales del país cuyo deporte estamos fiscalizando. No es apropiación — es visibilización y respeto.
 
 ## Metodología
 
-Cada reporte financiero que publicamos sigue un proceso riguroso:
+Nuestro proceso es simple y replicable:
 
-1. **Obtención de documentos**: Trabajamos exclusivamente con documentos de acceso público — balances auditados, memorias anuales, actas publicadas, información entregada por Ley de Transparencia.
+**1. Obtención:** Solicitamos documentos financieros públicos a través de la Ley de Transparencia (Ley 20.285), publicaciones institucionales y canales oficiales.
 
-2. **Análisis financiero**: Un analista revisa los estados financieros, identifica tendencias, calcula indicadores y detecta elementos relevantes.
+**2. Análisis:** LIKAN procesa cada documento identificando cifras clave, calculando ratios financieros y detectando hallazgos relevantes.
 
-3. **Redacción periodística**: Un periodista traduce el análisis técnico en un texto comprensible, verificando datos y agregando contexto.
+**3. Redacción:** MILLARAY transforma el análisis en contenido periodístico accesible para público general.
 
-4. **Publicación con trazabilidad**: Cada cifra publicada es verificable. Citamos fuentes y, cuando es posible, enlazamos a los documentos originales.
+**4. Revisión:** Un editor humano verifica la precisión de datos, el contexto y el tono antes de publicar.
 
-5. **Corrección abierta**: Cualquier persona puede reportar un error a través de nuestro sistema de correcciones. Toda corrección es pública y trazable.
+**5. Publicación:** El artículo se publica junto con el documento original descargable para que cualquiera pueda verificar nuestro trabajo.
 
-## Equipo
+## Transparencia total
 
-Transparencia Deporte es un proyecto independiente mantenido por un equipo pequeño:
+- Todo contenido generado por AI está identificado como tal
+- Los documentos originales están disponibles para descarga
+- Cualquier persona puede reportar errores
+- El código completo de este sitio es abierto en [GitHub]({{ site.github_repo }})
 
-{% for autor in site.data.autores %}
-- **{{ autor.nombre }}** — {{ autor.bio }}
-{% endfor %}
+## ¿Cómo participar?
 
-## Cómo colaborar
+**Comentando:** Cada artículo tiene una sección de comentarios donde puedes opinar y discutir.
 
-- **Reportar errores**: Si encuentras un dato incorrecto en cualquier artículo, usa el botón "¿Ves un error?" al final de cada publicación.
-- **Sugerir temas**: Puedes abrir un [Issue en GitHub]({{ site.github_repo }}/issues) con tu sugerencia.
-- **Enviar documentos**: Si tienes acceso a documentos públicos que podrían ser de interés, contáctanos.
-{% if site.google_form_contacto != "" %}- **Contacto general**: Usa nuestro [formulario de contacto]({{ site.google_form_contacto }}).{% endif %}
+**Reportando errores:** Si detectas un dato incorrecto, usa el botón "¿Ves un error?" que encontrarás al final de cada artículo.
 
-## Licencia
+**Compartiendo documentos:** Si tienes acceso a documentos financieros públicos del deporte chileno, compártelos en nuestro [foro de discusión]({{ site.github_repo }}/discussions).
 
-El contenido de este sitio está bajo licencia [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es). Puedes compartir y reutilizar nuestro trabajo citando la fuente.
-
-El código fuente del sitio está disponible en [GitHub]({{ site.github_repo }}).
+**Difundiendo:** Comparte nuestros reportes. La fiscalización ciudadana funciona cuando más personas prestan atención.
