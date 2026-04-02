@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+  <!-- SEO y Open Graph -->
+  {% include seo.html %}
+
+  <!-- Estilos críticos inline (above-the-fold) -->
+  <style>
+    /* --- Reset mínimo y tipografía base --- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul-oscuro: #1a2332;
+      --azul-medio: #2c3e57;
+      --azul-claro: #3a5a7c;
+      --blanco: #ffffff;
+      --gris-fondo: #f4f5f7;
+      --gris-texto: #4a4a4a;
+      --gris-borde: #dde1e6;
+      --rojo-negativo: #c0392b;
+      --verde-positivo: #27864e;
+      --amarillo-alerta: #d4a017;
+      --fuente-cuerpo: 'Charter', 'Georgia', 'Times New Roman', serif;
+      --fuente-titulo: 'system-ui', -apple-system, 'Segoe UI', sans-serif;
+      --ancho-max: 740px;
+    }
+
+    body {
+      font-family: var(--fuente-cuerpo);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--gris-texto);
+      background-color: var(--blanco);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Header --- */
+    .sitio-header {
+      background-color: var(--azul-oscuro);
+      padding: 0.8rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .sitio-header-inner {
+      max-width: var(--ancho-max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sitio-logo {
+      color: var(--blanco);
+      text-decoration: none;
+      font-family: var(--fuente-titulo);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+    .sitio-logo span { color: #6eadd4; }
+
+    /* --- Navegación --- */
+    .nav-principal { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-principal a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-family: var(--fuente-titulo);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-principal a:hover,
+    .nav-principal a[aria-current="page"] { color: var(--blanco); }
+
+    /* Menú móvil */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--blanco);
+      margin: 5px 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    @media (max-width: 640px) {
+      .menu-toggle { display: block; }
+      .nav-principal {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--azul-oscuro);
+        padding: 1rem 1.5rem;
+        gap: 0.8rem;
+        border-top: 1px solid var(--azul-medio);
+      }
+      .nav-principal.abierto { display: flex; }
+      .nav-principal a { font-size: 0.95rem; }
+    }
+
+    /* --- Contenido principal --- */
+    .contenido-principal {
+      max-width: var(--ancho-max);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* --- Footer --- */
+    .sitio-footer {
+      background-color: var(--azul-oscuro);
+      color: rgba(255,255,255,0.6);
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      font-family: var(--fuente-titulo);
+    }
+    .sitio-footer-inner {
+      max-width: var(--ancho-max);
+      margin: 0 auto;
+    }
+    .sitio-footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+    .sitio-footer a:hover { text-decoration: underline; }
+  </style>
+
+  <!-- Estilos completos (carga diferida) -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+
+  {% include header.html %}
+
+  <main class="contenido-principal" role="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- JS mínimo -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+---
+layout: default
+title: "Transparencia Deporte"
+---
+
+<!-- Bajada del sitio -->
+<section class="inicio-hero">
+  <p style="font-size:1.1rem; color:var(--azul-medio); margin-bottom:2.5rem; line-height:1.6;">
+    Periodismo financiero deportivo en Chile. Analizamos balances, memorias y documentos públicos
+    de federaciones, clubes y organismos del deporte chileno.
+  </p>
+</section>
+
+<!-- Últimos reportes -->
+<section class="inicio-seccion">
+  <div class="inicio-seccion-header">
+    <h2>Reportes financieros</h2>
+    <a href="{{ '/reportes/' | relative_url }}">Ver todos →</a>
+  </div>
+  {% assign reportes = site.posts | where: "category", "reportes" %}
+  {% if reportes.size > 0 %}
+    {% for post in reportes limit:3 %}
+      <article class="tarjeta-articulo">
+        <div class="tarjeta-fecha">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+        </div>
+        <div class="tarjeta-contenido">
+          <h3 class="tarjeta-titulo">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          {% if post.description %}
+            <p class="tarjeta-extracto">{{ post.description }}</p>
+          {% endif %}
+          {% if post.tags.size > 0 %}
+            <div class="tarjeta-tags">
+              {% for tag in post.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p class="listado-vacio">Próximamente: análisis financieros de organismos deportivos chilenos.</p>
+  {% endif %}
+</section>
+
+<!-- Últimas noticias -->
+<section class="inicio-seccion">
+  <div class="inicio-seccion-header">
+    <h2>Noticias</h2>
+    <a href="{{ '/noticias/' | relative_url }}">Ver todas →</a>
+  </div>
+  {% assign noticias = site.posts | where: "category", "noticias" %}
+  {% if noticias.size > 0 %}
+    {% for post in noticias limit:3 %}
+      <article class="tarjeta-articulo">
+        <div class="tarjeta-fecha">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+        </div>
+        <div class="tarjeta-contenido">
+          <h3 class="tarjeta-titulo">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          {% if post.description %}
+            <p class="tarjeta-extracto">{{ post.description }}</p>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p class="listado-vacio">Próximamente: noticias sobre finanzas del deporte chileno.</p>
+  {% endif %}
+</section>
+
+<!-- Últimas columnas -->
+<section class="inicio-seccion">
+  <div class="inicio-seccion-header">
+    <h2>Columnas</h2>
+    <a href="{{ '/columnas/' | relative_url }}">Ver todas →</a>
+  </div>
+  {% assign columnas = site.posts | where: "category", "columnas" %}
+  {% if columnas.size > 0 %}
+    {% for post in columnas limit:3 %}
+      <article class="tarjeta-articulo">
+        <div class="tarjeta-fecha">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+        </div>
+        <div class="tarjeta-contenido">
+          <h3 class="tarjeta-titulo">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          {% if post.description %}
+            <p class="tarjeta-extracto">{{ post.description }}</p>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p class="listado-vacio">Próximamente: columnas de opinión con enfoque analítico.</p>
+  {% endif %}
+</section>

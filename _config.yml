@@ -1,0 +1,86 @@
+# =============================================================================
+# Transparencia Deporte — Configuración principal de Jekyll
+# Sitio de periodismo financiero deportivo chileno
+# =============================================================================
+
+# --- Datos del sitio ---
+title: "Transparencia Deporte"
+description: "Periodismo financiero deportivo en Chile. Reportes, análisis y noticias sobre las finanzas del deporte chileno."
+url: "https://transparencia-deporte-cl.github.io"
+baseurl: ""
+lang: "es-CL"
+
+# --- Autor por defecto ---
+author:
+  name: "Transparencia Deporte"
+
+# --- Estructura de URLs ---
+# Genera: /reportes/2025/04/02/titulo-del-articulo/
+permalink: /:categories/:year/:month/:day/:title/
+
+# --- Categorías desde subcarpetas de _posts ---
+defaults:
+  - scope:
+      path: "_posts/reportes"
+      type: "posts"
+    values:
+      layout: "post"
+      category: "reportes"
+  - scope:
+      path: "_posts/noticias"
+      type: "posts"
+    values:
+      layout: "post"
+      category: "noticias"
+  - scope:
+      path: "_posts/columnas"
+      type: "posts"
+    values:
+      layout: "post"
+      category: "columnas"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# --- Plugins (compatibles con GitHub Pages) ---
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# --- Feed RSS ---
+feed:
+  path: "feed.xml"
+
+# --- Giscus (comentarios via GitHub Discussions) ---
+# IMPORTANTE: Activar Discussions en el repo y configurar Giscus en https://giscus.app
+giscus:
+  repo: "transparencia-deporte-cl/transparencia-deporte-cl.github.io"
+  repo_id: ""          # Completar desde giscus.app
+  category: "Comentarios"
+  category_id: ""      # Completar desde giscus.app
+  mapping: "pathname"
+  reactions: "1"
+  theme: "preferred_color_scheme"
+  lang: "es"
+
+# --- Reporte de errores (GitHub Issues) ---
+github_repo: "https://github.com/transparencia-deporte-cl/transparencia-deporte-cl.github.io"
+google_form_contacto: ""  # Completar con URL del Google Form
+
+# --- Excluir del build ---
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - node_modules
+  - vendor
+
+# --- Markdown ---
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

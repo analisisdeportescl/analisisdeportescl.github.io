@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<article class="articulo" itemscope itemtype="http://schema.org/Article">
+
+  <!-- Cabecera del artículo -->
+  <header class="articulo-header">
+    <div class="articulo-categoria">
+      <a href="{{ '/' | append: page.category | append: '/' | relative_url }}">
+        {{ page.category | capitalize }}
+      </a>
+    </div>
+    <h1 class="articulo-titulo" itemprop="headline">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="articulo-bajada">{{ page.description }}</p>
+    {% endif %}
+    <div class="articulo-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%d de %B de %Y" }}
+      </time>
+      {% if page.author %}
+        {% assign autor = site.data.autores | where: "id", page.author | first %}
+        {% if autor %}
+          <span class="articulo-autor" itemprop="author">
+            · {{ autor.nombre }}
+          </span>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% if page.tags.size > 0 %}
+      <div class="articulo-tags">
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <!-- Cuerpo del artículo -->
+  <div class="articulo-cuerpo" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <!-- Separador -->
+  <hr class="articulo-separador">
+
+  <!-- Bloque de comentarios (Giscus) -->
+  <section class="articulo-comentarios" id="comentarios">
+    <h2>Comentarios</h2>
+    <p class="comentarios-info">
+      Los comentarios funcionan a través de GitHub Discussions.
+      Necesitas una cuenta de GitHub para participar.
+    </p>
+    {% include giscus.html %}
+  </section>
+
+  <!-- Botón de reporte de errores -->
+  {% include error-report.html %}
+
+</article>

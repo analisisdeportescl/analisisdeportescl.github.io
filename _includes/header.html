@@ -1,0 +1,29 @@
+<!-- Cabecera del sitio con navegación principal -->
+<header class="sitio-header" role="banner">
+  <div class="sitio-header-inner">
+    <a href="{{ '/' | relative_url }}" class="sitio-logo" aria-label="Inicio">
+      Transparencia<span>Deporte</span>
+    </a>
+
+    <!-- Botón menú móvil -->
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navegación -->
+    <nav id="nav-principal" role="navigation" aria-label="Navegación principal">
+      <ul class="nav-principal">
+        {% for item in site.data.navegacion %}
+          <li>
+            <a href="{{ item.url | relative_url }}"
+               {% if page.url == item.url %}aria-current="page"{% endif %}>
+              {{ item.titulo }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

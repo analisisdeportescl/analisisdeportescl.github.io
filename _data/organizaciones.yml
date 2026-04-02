@@ -1,0 +1,15 @@
+# Organizaciones deportivas cubiertas por Transparencia Deporte
+# Cada ficha se puede referenciar con site.data.organizaciones
+
+- id: "fechib"
+  nombre: "Federación Chilena de Balonmano"
+  sigla: "FECHIB"
+  tipo: "federacion"
+  deporte: "Balonmano"
+  sitio_web: "https://www.balonmanochile.cl"
+  dependencia: "Comité Olímpico de Chile / IND"
+  tags:
+    - fechib
+    - balonmano
+    - federacion
+  notas: "Primer organismo analizado por Transparencia Deporte."

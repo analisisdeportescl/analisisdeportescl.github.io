@@ -1,0 +1,32 @@
+<!-- Bloque de reporte de errores -->
+<!-- Genera un enlace a GitHub Issues con template pre-llenado -->
+<aside class="error-report" aria-label="Reportar un error">
+  <div class="error-report-inner">
+    <p class="error-report-titulo">¿Ves un error en este artículo?</p>
+    <p class="error-report-texto">
+      Si encuentras un dato incorrecto, una cifra equivocada o cualquier error,
+      ayúdanos a corregirlo. La precisión es fundamental en nuestro trabajo.
+    </p>
+    <div class="error-report-acciones">
+      <!-- Enlace a GitHub Issue con template y datos pre-llenados -->
+      {% assign titulo_encoded = page.title | url_encode %}
+      {% assign url_encoded = page.url | absolute_url | url_encode %}
+      <a href="{{ site.github_repo }}/issues/new?template=correccion.yml&title=%5BCorrección%5D+{{ titulo_encoded }}&labels=corrección&articulo={{ url_encoded }}"
+         class="boton-reporte"
+         target="_blank"
+         rel="noopener">
+        Reportar en GitHub
+      </a>
+
+      <!-- Alternativa: Google Form para usuarios sin GitHub -->
+      {% if site.google_form_contacto != "" %}
+        <a href="{{ site.google_form_contacto }}"
+           class="boton-reporte boton-reporte--secundario"
+           target="_blank"
+           rel="noopener">
+          Reportar por formulario
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</aside>

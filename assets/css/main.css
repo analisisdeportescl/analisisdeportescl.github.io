@@ -1,0 +1,366 @@
+/* =============================================================================
+   Transparencia Deporte — Estilos globales
+   Complementa los estilos críticos inline de default.html
+   ============================================================================= */
+
+/* --- Enlaces --- */
+a { color: var(--azul-claro); }
+a:hover { color: var(--azul-oscuro); }
+
+/* --- Tipografía del artículo --- */
+.articulo-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gris-borde);
+}
+.articulo-categoria a {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--azul-claro);
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+}
+.articulo-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--azul-oscuro);
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.02em;
+}
+.articulo-bajada {
+  font-size: 1.15rem;
+  color: var(--gris-texto);
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+.articulo-meta {
+  font-family: var(--fuente-titulo);
+  font-size: 0.85rem;
+  color: #888;
+}
+.articulo-tags {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tag {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--gris-fondo);
+  color: var(--azul-medio);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+
+/* --- Cuerpo del artículo --- */
+.articulo-cuerpo h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  margin: 2.5rem 0 1rem;
+  letter-spacing: -0.01em;
+}
+.articulo-cuerpo h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--azul-medio);
+  margin: 2rem 0 0.8rem;
+}
+.articulo-cuerpo p {
+  margin-bottom: 1.3rem;
+}
+.articulo-cuerpo ul,
+.articulo-cuerpo ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+.articulo-cuerpo li {
+  margin-bottom: 0.5rem;
+}
+.articulo-cuerpo blockquote {
+  border-left: 3px solid var(--azul-claro);
+  margin: 1.5rem 0;
+  padding: 0.8rem 1.2rem;
+  color: var(--azul-medio);
+  font-style: italic;
+  background: var(--gris-fondo);
+}
+
+/* --- Tablas financieras (responsivas) --- */
+.tabla-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0 2rem;
+  border: 1px solid var(--gris-borde);
+  border-radius: 6px;
+}
+.articulo-cuerpo table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--fuente-titulo);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.articulo-cuerpo thead {
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+}
+.articulo-cuerpo th {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.articulo-cuerpo td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--gris-borde);
+}
+.articulo-cuerpo tbody tr:hover {
+  background: var(--gris-fondo);
+}
+/* Última fila (totales) en negrita */
+.articulo-cuerpo tbody tr:last-child {
+  font-weight: 600;
+}
+
+/* Semáforo financiero: clases para cifras */
+.positivo { color: var(--verde-positivo); font-weight: 600; }
+.negativo { color: var(--rojo-negativo); font-weight: 600; }
+.alerta { color: var(--amarillo-alerta); font-weight: 600; }
+
+/* --- Cifras destacadas --- */
+.cifra-destacada {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* --- Separador de artículo --- */
+.articulo-separador {
+  border: none;
+  border-top: 1px solid var(--gris-borde);
+  margin: 3rem 0 2rem;
+}
+
+/* --- Comentarios --- */
+.articulo-comentarios h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.2rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 0.5rem;
+}
+.comentarios-info {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Bloque de reporte de errores --- */
+.error-report {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: var(--gris-fondo);
+  border: 1px solid var(--gris-borde);
+  border-left: 4px solid var(--amarillo-alerta);
+  border-radius: 0 6px 6px 0;
+}
+.error-report-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 0.4rem;
+}
+.error-report-texto {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.error-report-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.boton-reporte {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+}
+.boton-reporte:hover {
+  background: var(--azul-medio);
+  color: var(--blanco);
+}
+.boton-reporte--secundario {
+  background: var(--blanco);
+  color: var(--azul-oscuro);
+  border: 1px solid var(--gris-borde);
+}
+.boton-reporte--secundario:hover {
+  background: var(--gris-fondo);
+  color: var(--azul-oscuro);
+}
+
+/* --- Listado de artículos --- */
+.listado-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--gris-borde);
+}
+.listado-header h1 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--azul-oscuro);
+}
+.listado-descripcion {
+  color: var(--gris-texto);
+  margin-top: 0.5rem;
+}
+.tarjeta-articulo {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--gris-borde);
+}
+.tarjeta-fecha {
+  flex-shrink: 0;
+  font-family: var(--fuente-titulo);
+  font-size: 0.8rem;
+  color: #888;
+  min-width: 80px;
+  padding-top: 0.2rem;
+}
+.tarjeta-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+.tarjeta-titulo a {
+  color: var(--azul-oscuro);
+  text-decoration: none;
+}
+.tarjeta-titulo a:hover {
+  color: var(--azul-claro);
+}
+.tarjeta-extracto {
+  font-size: 0.92rem;
+  color: var(--gris-texto);
+  margin-bottom: 0.4rem;
+}
+.tarjeta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.listado-vacio {
+  color: #888;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* --- Página estática --- */
+.pagina-header h1 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--azul-oscuro);
+  margin-bottom: 1.5rem;
+}
+.pagina-cuerpo p { margin-bottom: 1.3rem; }
+
+/* --- Footer grid --- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.footer-links {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+.footer-links li { margin-bottom: 0.4rem; }
+.footer-legal {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .tarjeta-articulo {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+/* --- Inicio: sección de últimos artículos --- */
+.inicio-seccion {
+  margin-bottom: 3rem;
+}
+.inicio-seccion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--azul-oscuro);
+}
+.inicio-seccion-header h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.inicio-seccion-header a {
+  font-family: var(--fuente-titulo);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* --- Accesibilidad --- */
+:focus-visible {
+  outline: 2px solid var(--azul-claro);
+  outline-offset: 2px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

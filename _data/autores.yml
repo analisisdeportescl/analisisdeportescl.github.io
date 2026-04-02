@@ -1,0 +1,14 @@
+# Equipo editorial de Transparencia Deporte
+# El campo "id" se usa en el front matter de cada post: author: analista
+
+- id: "analista"
+  nombre: "Analista Financiero"
+  rol: "Análisis financiero"
+  bio: "Encargado del análisis de balances, memorias y documentos financieros de organismos deportivos."
+
+- id: "periodista"
+  nombre: "Periodista"
+  rol: "Redacción periodística"
+  bio: "Encargado de la cobertura noticiosa y columnas de opinión sobre finanzas del deporte chileno."
+
+# NOTA: Reemplazar nombres genéricos por los reales cuando el equipo lo decida

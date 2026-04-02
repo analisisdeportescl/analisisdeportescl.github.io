@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<section class="listado-seccion">
+  <header class="listado-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="listado-descripcion">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="listado-articulos">
+    {% assign posts_filtrados = site.posts | where: "category", page.categoria %}
+    {% if posts_filtrados.size > 0 %}
+      {% for post in posts_filtrados %}
+        <article class="tarjeta-articulo">
+          <div class="tarjeta-fecha">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%d/%m/%Y" }}
+            </time>
+          </div>
+          <div class="tarjeta-contenido">
+            <h2 class="tarjeta-titulo">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            {% if post.description %}
+              <p class="tarjeta-extracto">{{ post.description }}</p>
+            {% endif %}
+            {% if post.tags.size > 0 %}
+              <div class="tarjeta-tags">
+                {% for tag in post.tags %}
+                  <span class="tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    {% else %}
+      <p class="listado-vacio">Aún no hay publicaciones en esta sección.</p>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<!-- Giscus: comentarios via GitHub Discussions -->
+<!-- Se carga solo cuando el usuario hace scroll hasta esta sección -->
+<div id="giscus-container"></div>
+
+<script>
+  // Carga diferida de Giscus: solo cuando el contenedor es visible
+  (function() {
+    var contenedor = document.getElementById('giscus-container');
+    if (!contenedor) return;
+
+    var observador = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var script = document.createElement('script');
+          script.src = 'https://giscus.app/client.js';
+          script.setAttribute('data-repo', '{{ site.giscus.repo }}');
+          script.setAttribute('data-repo-id', '{{ site.giscus.repo_id }}');
+          script.setAttribute('data-category', '{{ site.giscus.category }}');
+          script.setAttribute('data-category-id', '{{ site.giscus.category_id }}');
+          script.setAttribute('data-mapping', '{{ site.giscus.mapping }}');
+          script.setAttribute('data-reactions-enabled', '{{ site.giscus.reactions }}');
+          script.setAttribute('data-theme', '{{ site.giscus.theme }}');
+          script.setAttribute('data-lang', '{{ site.giscus.lang }}');
+          script.crossOrigin = 'anonymous';
+          script.async = true;
+          contenedor.appendChild(script);
+          observador.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    observador.observe(contenedor);
+  })();
+</script>
