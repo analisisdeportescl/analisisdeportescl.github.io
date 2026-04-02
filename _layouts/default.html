@@ -8,10 +8,15 @@
   <!-- SEO y Open Graph -->
   {% include seo.html %}
 
-  <!-- Estilos críticos inline (above-the-fold) -->
+  <!-- Estilos críticos inline — se cargan primero y tienen prioridad -->
   <style>
-    /* --- Reset mínimo y tipografía base --- */
+    /* --- Reset completo (elimina estilos de temas Jekyll) --- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body, main, article, section, header, footer, nav, div, p, h1, h2, h3, h4, h5, h6,
+    ul, ol, li, a, table, thead, tbody, tr, th, td, blockquote, pre, code, img, figure {
+      all: revert;
+      box-sizing: border-box;
+    }
 
     :root {
       --azul-oscuro: #1a2332;
@@ -29,18 +34,32 @@
       --ancho-max: 740px;
     }
 
+    /* --- Base — forzamos fondo blanco --- */
+    html {
+      background-color: var(--blanco) !important;
+    }
     body {
-      font-family: var(--fuente-cuerpo);
-      font-size: 18px;
-      line-height: 1.7;
-      color: var(--gris-texto);
-      background-color: var(--blanco);
+      font-family: var(--fuente-cuerpo) !important;
+      font-size: 18px !important;
+      line-height: 1.7 !important;
+      color: var(--gris-texto) !important;
+      background-color: var(--blanco) !important;
       -webkit-font-smoothing: antialiased;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* --- Ocultar elementos inyectados por temas Jekyll --- */
+    body > header.page-header,
+    .main-content > header,
+    body > footer.site-footer,
+    .project-name, .project-tagline {
+      display: none !important;
     }
 
     /* --- Header --- */
     .sitio-header {
-      background-color: var(--azul-oscuro);
+      background-color: var(--azul-oscuro) !important;
       padding: 0.8rem 1.5rem;
       position: sticky;
       top: 0;
@@ -54,19 +73,19 @@
       align-items: center;
     }
     .sitio-logo {
-      color: var(--blanco);
+      color: var(--blanco) !important;
       text-decoration: none;
       font-family: var(--fuente-titulo);
       font-weight: 700;
       font-size: 1.15rem;
       letter-spacing: -0.02em;
     }
-    .sitio-logo span { color: #6eadd4; }
+    .sitio-logo span { color: #6eadd4 !important; }
 
     /* --- Navegación --- */
-    .nav-principal { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-principal { display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
     .nav-principal a {
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.75) !important;
       text-decoration: none;
       font-family: var(--fuente-titulo);
       font-size: 0.85rem;
@@ -76,9 +95,9 @@
       transition: color 0.2s;
     }
     .nav-principal a:hover,
-    .nav-principal a[aria-current="page"] { color: var(--blanco); }
+    .nav-principal a[aria-current="page"] { color: var(--blanco) !important; }
 
-    /* Menú móvil */
+    /* --- Menú móvil --- */
     .menu-toggle {
       display: none;
       background: none;
@@ -113,17 +132,19 @@
       .nav-principal a { font-size: 0.95rem; }
     }
 
-    /* --- Contenido principal --- */
+    /* --- Contenido principal — fondo blanco forzado --- */
     .contenido-principal {
-      max-width: var(--ancho-max);
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      max-width: var(--ancho-max) !important;
+      margin: 0 auto !important;
+      padding: 2rem 1.5rem 4rem !important;
+      background-color: var(--blanco) !important;
+      color: var(--gris-texto) !important;
     }
 
     /* --- Footer --- */
     .sitio-footer {
-      background-color: var(--azul-oscuro);
-      color: rgba(255,255,255,0.6);
+      background-color: var(--azul-oscuro) !important;
+      color: rgba(255,255,255,0.6) !important;
       padding: 2rem 1.5rem;
       font-size: 0.85rem;
       font-family: var(--fuente-titulo);
@@ -133,7 +154,7 @@
       margin: 0 auto;
     }
     .sitio-footer a {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.8) !important;
       text-decoration: none;
     }
     .sitio-footer a:hover { text-decoration: underline; }
