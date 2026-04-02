@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-  <!-- SEO y Open Graph -->
   {% include seo.html %}
 
-  <!-- Estilos críticos inline — se cargan primero y tienen prioridad -->
   <style>
-    /* --- Reset completo (elimina estilos de temas Jekyll) --- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body, main, article, section, header, footer, nav, div, p, h1, h2, h3, h4, h5, h6,
     ul, ol, li, a, table, thead, tbody, tr, th, td, blockquote, pre, code, img, figure {
@@ -34,10 +31,7 @@
       --ancho-max: 740px;
     }
 
-    /* --- Base — forzamos fondo blanco --- */
-    html {
-      background-color: var(--blanco) !important;
-    }
+    html { background-color: var(--blanco) !important; }
     body {
       font-family: var(--fuente-cuerpo) !important;
       font-size: 18px !important;
@@ -49,7 +43,6 @@
       padding: 0 !important;
     }
 
-    /* --- Ocultar elementos inyectados por temas Jekyll --- */
     body > header.page-header,
     .main-content > header,
     body > footer.site-footer,
@@ -57,7 +50,6 @@
       display: none !important;
     }
 
-    /* --- Header --- */
     .sitio-header {
       background-color: var(--azul-oscuro) !important;
       padding: 0.8rem 1.5rem;
@@ -82,7 +74,6 @@
     }
     .sitio-logo span { color: #6eadd4 !important; }
 
-    /* --- Navegación --- */
     .nav-principal { display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
     .nav-principal a {
       color: rgba(255,255,255,0.75) !important;
@@ -97,7 +88,6 @@
     .nav-principal a:hover,
     .nav-principal a[aria-current="page"] { color: var(--blanco) !important; }
 
-    /* --- Menú móvil --- */
     .menu-toggle {
       display: none;
       background: none;
@@ -132,7 +122,6 @@
       .nav-principal a { font-size: 0.95rem; }
     }
 
-    /* --- Contenido principal — fondo blanco forzado --- */
     .contenido-principal {
       max-width: var(--ancho-max) !important;
       margin: 0 auto !important;
@@ -141,7 +130,6 @@
       color: var(--gris-texto) !important;
     }
 
-    /* --- Footer --- */
     .sitio-footer {
       background-color: var(--azul-oscuro) !important;
       color: rgba(255,255,255,0.6) !important;
@@ -160,7 +148,6 @@
     .sitio-footer a:hover { text-decoration: underline; }
   </style>
 
-  <!-- Estilos completos (carga diferida) -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
@@ -173,7 +160,6 @@
 
   {% include footer.html %}
 
-  <!-- JS mínimo -->
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
 </body>
 </html>
