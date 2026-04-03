@@ -21,6 +21,22 @@
     });
   }
 
+  // --- Copiar enlace ---
+  var btnCopiar = document.querySelector('.compartir-link');
+  if (btnCopiar) {
+    btnCopiar.addEventListener('click', function() {
+      var url = this.getAttribute('data-url');
+      navigator.clipboard.writeText(url).then(function() {
+        btnCopiar.textContent = '✓';
+        btnCopiar.classList.add('copiado');
+        setTimeout(function() {
+          btnCopiar.textContent = '🔗';
+          btnCopiar.classList.remove('copiado');
+        }, 2000);
+      });
+    });
+  }
+
   // --- Tablas responsivas ---
   var tablas = document.querySelectorAll('.articulo-cuerpo table');
   tablas.forEach(function(tabla) {
