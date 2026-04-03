@@ -1,33 +1,27 @@
-/* =============================================================================
-   Transparencia Deporte — Scripts principales
-   Funcionalidad mínima: menú móvil + tablas responsivas
-   ============================================================================= */
-
+/* Transparencia Deporte — Scripts */
 (function() {
   'use strict';
 
-  // --- Menú móvil ---
-  var botonMenu = document.querySelector('.menu-toggle');
-  var nav = document.querySelector('.nav-principal');
+  // --- Menu movil ---
+  var boton = document.querySelector('.menu-toggle');
+  var nav = document.querySelector('.nav-links');
 
-  if (botonMenu && nav) {
-    botonMenu.addEventListener('click', function() {
-      var estaAbierto = nav.classList.toggle('abierto');
-      botonMenu.setAttribute('aria-expanded', estaAbierto);
-      botonMenu.setAttribute('aria-label', estaAbierto ? 'Cerrar menú' : 'Abrir menú');
+  if (boton && nav) {
+    boton.addEventListener('click', function() {
+      var abierto = nav.classList.toggle('abierto');
+      boton.setAttribute('aria-expanded', abierto);
+      boton.setAttribute('aria-label', abierto ? 'Cerrar menu' : 'Abrir menu');
     });
 
-    // Cerrar menú al hacer click fuera
     document.addEventListener('click', function(e) {
-      if (!botonMenu.contains(e.target) && !nav.contains(e.target)) {
+      if (!boton.contains(e.target) && !nav.contains(e.target)) {
         nav.classList.remove('abierto');
-        botonMenu.setAttribute('aria-expanded', 'false');
+        boton.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
   // --- Tablas responsivas ---
-  // Envuelve todas las tablas del artículo en un div con scroll horizontal
   var tablas = document.querySelectorAll('.articulo-cuerpo table');
   tablas.forEach(function(tabla) {
     if (!tabla.parentElement.classList.contains('tabla-wrapper')) {
@@ -40,5 +34,4 @@
       wrapper.appendChild(tabla);
     }
   });
-
 })();

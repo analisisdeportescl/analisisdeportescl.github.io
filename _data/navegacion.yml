@@ -1,5 +1,4 @@
-# Menú de navegación principal
-# Cada ítem genera un enlace en el header
+# Menu de navegacion principal
 
 - titulo: "Reportes"
   url: "/reportes/"
@@ -11,4 +10,4 @@
   url: "/columnas/"
 
 - titulo: "Proyecto"
-  url: "/sobre-el-proyecto/"
+  url: "/sobre/"

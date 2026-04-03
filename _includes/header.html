@@ -1,20 +1,17 @@
-<!-- Cabecera del sitio con navegación principal -->
-<header class="sitio-header" role="banner">
-  <div class="sitio-header-inner">
-    <a href="{{ '/' | relative_url }}" class="sitio-logo" aria-label="Inicio">
+<header class="site-header" role="banner">
+  <div class="site-header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="Inicio">
       Transparencia<span>Deporte</span>
     </a>
 
-    <!-- Botón menú móvil -->
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal">
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Navegación -->
-    <nav id="nav-principal" role="navigation" aria-label="Navegación principal">
-      <ul class="nav-principal">
+    <nav id="nav-links" role="navigation" aria-label="Navegacion principal">
+      <ul class="nav-links">
         {% for item in site.data.navegacion %}
           <li>
             <a href="{{ item.url | relative_url }}"

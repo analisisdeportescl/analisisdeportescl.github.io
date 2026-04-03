@@ -1,13 +1,12 @@
-<!-- Pie de página -->
-<footer class="sitio-footer" role="contentinfo">
-  <div class="sitio-footer-inner">
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
     <div class="footer-grid">
       <div class="footer-col">
-        <p class="footer-logo">Transparencia<span style="color:#6eadd4">Deporte</span></p>
+        <p class="footer-logo">Transparencia<span>Deporte</span></p>
         <p>Periodismo financiero deportivo en Chile.</p>
       </div>
       <div class="footer-col">
-        <p><strong style="color:rgba(255,255,255,0.85)">Secciones</strong></p>
+        <p><strong>Secciones</strong></p>
         <ul class="footer-links">
           <li><a href="{{ '/reportes/' | relative_url }}">Reportes</a></li>
           <li><a href="{{ '/noticias/' | relative_url }}">Noticias</a></li>
@@ -15,9 +14,9 @@
         </ul>
       </div>
       <div class="footer-col">
-        <p><strong style="color:rgba(255,255,255,0.85)">Proyecto</strong></p>
+        <p><strong>Proyecto</strong></p>
         <ul class="footer-links">
-          <li><a href="{{ '/sobre-el-proyecto/' | relative_url }}">Sobre nosotros</a></li>
+          <li><a href="{{ '/sobre/' | relative_url }}">Sobre nosotros</a></li>
           <li><a href="{{ site.github_repo }}" target="_blank" rel="noopener">GitHub</a></li>
           {% if site.google_form_contacto != "" %}
             <li><a href="{{ site.google_form_contacto }}" target="_blank" rel="noopener">Contacto</a></li>
@@ -27,10 +26,10 @@
     </div>
     <div class="footer-legal">
       <p>
-        © {{ 'now' | date: "%Y" }} {{ site.title }}.
+        &copy; {{ 'now' | date: "%Y" }} {{ site.title }}.
         Contenido bajo
         <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a>.
-        Código fuente en
+        Codigo fuente en
         <a href="{{ site.github_repo }}" target="_blank" rel="noopener">GitHub</a>.
       </p>
     </div>

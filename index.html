@@ -3,19 +3,19 @@ layout: default
 title: "Transparencia Deporte"
 ---
 
-<!-- Bajada del sitio -->
 <section class="inicio-hero">
-  <p style="font-size:1.1rem; color:var(--azul-medio); margin-bottom:2.5rem; line-height:1.6;">
-    Periodismo financiero deportivo en Chile. Analizamos balances, memorias y documentos públicos
-    de federaciones, clubes y organismos del deporte chileno.
+  <h1 class="hero-title">Transparencia<span>Deporte</span></h1>
+  <p class="hero-desc">
+    Periodismo financiero deportivo en Chile. Analizamos balances, memorias y documentos
+    publicos de federaciones, clubes y organismos del deporte chileno.
   </p>
 </section>
 
-<!-- Últimos reportes -->
+<!-- Reportes -->
 <section class="inicio-seccion">
   <div class="inicio-seccion-header">
     <h2>Reportes financieros</h2>
-    <a href="{{ '/reportes/' | relative_url }}">Ver todos →</a>
+    <a href="{{ '/reportes/' | relative_url }}">Ver todos &rarr;</a>
   </div>
   {% assign reportes = site.posts | where: "category", "reportes" %}
   {% if reportes.size > 0 %}
@@ -40,15 +40,15 @@ title: "Transparencia Deporte"
       </article>
     {% endfor %}
   {% else %}
-    <p class="listado-vacio">Próximamente: análisis financieros de organismos deportivos chilenos.</p>
+    <p class="listado-vacio">Proximamente: analisis financieros de organismos deportivos chilenos.</p>
   {% endif %}
 </section>
 
-<!-- Últimas noticias -->
+<!-- Noticias -->
 <section class="inicio-seccion">
   <div class="inicio-seccion-header">
     <h2>Noticias</h2>
-    <a href="{{ '/noticias/' | relative_url }}">Ver todas →</a>
+    <a href="{{ '/noticias/' | relative_url }}">Ver todas &rarr;</a>
   </div>
   {% assign noticias = site.posts | where: "category", "noticias" %}
   {% if noticias.size > 0 %}
@@ -68,15 +68,15 @@ title: "Transparencia Deporte"
       </article>
     {% endfor %}
   {% else %}
-    <p class="listado-vacio">Próximamente: noticias sobre finanzas del deporte chileno.</p>
+    <p class="listado-vacio">Proximamente: noticias sobre finanzas del deporte chileno.</p>
   {% endif %}
 </section>
 
-<!-- Últimas columnas -->
+<!-- Columnas -->
 <section class="inicio-seccion">
   <div class="inicio-seccion-header">
     <h2>Columnas</h2>
-    <a href="{{ '/columnas/' | relative_url }}">Ver todas →</a>
+    <a href="{{ '/columnas/' | relative_url }}">Ver todas &rarr;</a>
   </div>
   {% assign columnas = site.posts | where: "category", "columnas" %}
   {% if columnas.size > 0 %}
@@ -96,6 +96,6 @@ title: "Transparencia Deporte"
       </article>
     {% endfor %}
   {% else %}
-    <p class="listado-vacio">Próximamente: columnas de opinión con enfoque analítico.</p>
+    <p class="listado-vacio">Proximamente: columnas de opinion con enfoque analitico.</p>
   {% endif %}
 </section>
