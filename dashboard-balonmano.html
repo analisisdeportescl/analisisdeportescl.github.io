@@ -136,7 +136,7 @@ permalink: /dashboard-balonmano/
   }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBSSt0DLGe1DUUW2JBJhEOEIBpOLWSYoqMHhjLMJRwDmPODtMEAVIoMKTszKrMYbgJJQkGPHA5C8VHFMd0Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- HEADER -->
 <div style="margin-bottom:8px;">
@@ -185,9 +185,9 @@ permalink: /dashboard-balonmano/
   <h2>Evolucion financiera</h2>
 </div>
 <div class="dash-tabs" id="tabs-main">
-  <button class="dash-tab active" onclick="switchChart('resultado')">Resultado neto</button>
-  <button class="dash-tab" onclick="switchChart('ingresos')">Ingresos vs Gastos</button>
-  <button class="dash-tab" onclick="switchChart('cobertura')">Cobertura</button>
+  <button class="dash-tab active" data-chart="resultado">Resultado neto</button>
+  <button class="dash-tab" data-chart="ingresos">Ingresos vs Gastos</button>
+  <button class="dash-tab" data-chart="cobertura">Cobertura</button>
 </div>
 <div class="dash-card">
   <div class="dash-chart-wrap">
@@ -251,8 +251,8 @@ permalink: /dashboard-balonmano/
   <h2>Composicion de ingresos</h2>
 </div>
 <div class="dash-tabs" id="tabs-comp">
-  <button class="dash-tab active" id="comp-2024-btn" onclick="switchComposicion('2024')">2024</button>
-  <button class="dash-tab" id="comp-2022-btn" onclick="switchComposicion('2022')">2022</button>
+  <button class="dash-tab active" id="comp-2024-btn" data-comp="2024">2024</button>
+  <button class="dash-tab" id="comp-2022-btn" data-comp="2022">2022</button>
 </div>
 <div class="dash-comp-wrap">
   <div class="dash-comp-chart">
@@ -463,9 +463,6 @@ function buildCoberturaChart() {
 }
 
 function switchChart(type) {
-  var btns = document.getElementById('tabs-main').querySelectorAll('.dash-tab');
-  btns.forEach(function(b) { b.classList.remove('active'); });
-  event.target.classList.add('active');
   if (mainChart) mainChart.destroy();
   var config;
   if (type === 'resultado') config = buildResultadoChart();
@@ -473,6 +470,15 @@ function switchChart(type) {
   else config = buildCoberturaChart();
   mainChart = new Chart(mainCtx, config);
 }
+
+document.getElementById('tabs-main').addEventListener('click', function(e) {
+  var btn = e.target.closest('[data-chart]');
+  if (!btn) return;
+  this.querySelectorAll('.dash-tab').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  switchChart(btn.getAttribute('data-chart'));
+});
+
 mainChart = new Chart(mainCtx, buildResultadoChart());
 
 // PIE CHART
@@ -487,12 +493,37 @@ function renderComposicion(year) {
     data: { labels: d.labels, datasets: [{ data: d.values, backgroundColor: d.colors, borderWidth: 0, hoverOffset: 6 }] },
     options: { responsive: false, cutout: '60%', plugins: { legend: { display: false } } }
   });
-  var html = '';
+
+  var container = document.getElementById('composicionLegend');
+  container.textContent = '';
+
   d.labels.forEach(function(label, i) {
-    html += '<div class="dash-leg-item"><div class="dash-leg-dot" style="background:' + d.colors[i] + '"></div><div><div class="dash-leg-name">' + label + '</div><div class="dash-leg-sub">$' + d.values[i].toFixed(1) + 'M — ' + d.pcts[i] + '</div></div></div>';
+    var item = document.createElement('div');
+    item.className = 'dash-leg-item';
+
+    var dot = document.createElement('div');
+    dot.className = 'dash-leg-dot';
+    dot.style.background = d.colors[i];
+
+    var info = document.createElement('div');
+    var name = document.createElement('div');
+    name.className = 'dash-leg-name';
+    name.textContent = label;
+    var sub = document.createElement('div');
+    sub.className = 'dash-leg-sub';
+    sub.textContent = '$' + d.values[i].toFixed(1) + 'M — ' + d.pcts[i];
+    info.appendChild(name);
+    info.appendChild(sub);
+
+    item.appendChild(dot);
+    item.appendChild(info);
+    container.appendChild(item);
   });
-  html += '<div class="dash-comp-note">' + d.note + '</div>';
-  document.getElementById('composicionLegend').innerHTML = html;
+
+  var note = document.createElement('div');
+  note.className = 'dash-comp-note';
+  note.textContent = d.note;
+  container.appendChild(note);
 }
 
 function switchComposicion(year) {
@@ -500,6 +531,13 @@ function switchComposicion(year) {
   document.getElementById('comp-2022-btn').classList.toggle('active', year === '2022');
   renderComposicion(year);
 }
+
+document.getElementById('tabs-comp').addEventListener('click', function(e) {
+  var btn = e.target.closest('[data-comp]');
+  if (!btn) return;
+  switchComposicion(btn.getAttribute('data-comp'));
+});
+
 renderComposicion('2024');
 
 // MULTAS

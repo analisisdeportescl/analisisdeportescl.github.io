@@ -1,0 +1,28 @@
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Entorno
+.env*
+*.key
+*.pem
+.bundle/
+vendor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
