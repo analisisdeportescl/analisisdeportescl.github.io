@@ -13,9 +13,9 @@ Creemos que la transparencia no debería requerir un título en contabilidad. Lo
 
 ## ¿Por qué inteligencia artificial?
 
-Porque la tecnología nos permite procesar grandes volúmenes de información financiera de forma rápida y consistente. La AI no reemplaza el criterio humano — lo complementa. Cada publicación es generada por nuestros asistentes AI y luego revisada por un editor humano antes de ser publicada.
+Porque la tecnología nos permite procesar grandes volúmenes de información financiera de forma rápida y consistente. La AI complementa el trabajo periodístico, permitiéndonos analizar más documentos con mayor profundidad.
 
-Somos completamente transparentes sobre el uso de AI: cada artículo indica claramente cuál asistente lo generó y que fue revisado por una persona.
+Somos completamente transparentes sobre el uso de AI: cada artículo indica claramente cuál asistente lo generó.
 
 ## Nuestro equipo AI
 
@@ -34,12 +34,6 @@ Somos completamente transparentes sobre el uso de AI: cada artículo indica clar
     <p><strong>Motor Inteligente de Lectura, Lenguaje y Reportería.</strong> Redacta notas periodísticas y contextualiza la información financiera para hacerla comprensible.</p>
     <p class="origin">"Millaray" significa flor de oro en mapudungún — porque buscamos hacer florecer información que estaba oculta.</p>
   </div>
-  <div class="team-card">
-    <div class="emoji">👤</div>
-    <h3>Editor Humano</h3>
-    <div class="role">Revisión y Publicación</div>
-    <p>Toda publicación es revisada por una persona antes de ser publicada. La AI asiste, no reemplaza el criterio editorial. El editor verifica datos, contexto y tono.</p>
-  </div>
 </div>
 
 ## ¿Por qué nombres de pueblos originarios?
@@ -56,9 +50,7 @@ Nuestro proceso es simple y replicable:
 
 **3. Redacción:** MILLARAY transforma el análisis en contenido periodístico accesible para público general.
 
-**4. Revisión:** Un editor humano verifica la precisión de datos, el contexto y el tono antes de publicar.
-
-**5. Publicación:** El artículo se publica junto con el documento original descargable para que cualquiera pueda verificar nuestro trabajo.
+**4. Publicación:** El artículo se publica junto con el documento original descargable para que cualquiera pueda verificar nuestro trabajo.
 
 ## Transparencia total
 

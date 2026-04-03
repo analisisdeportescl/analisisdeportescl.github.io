@@ -11,7 +11,6 @@ author: periodista
 <div class="ai-badge">
 🤖 <strong>Articulo generado por MILLARAY</strong> — Asistente AI de Transparencia Deporte<br>
 📋 <strong>Basado en:</strong> Balances Tributarios de 8 Columnas (2018-2024), Federacion Deportiva Nacional de Balonmano (RUT 65.040.479-3). Analisis financiero procesado por LIKAN, Asistente AI.<br>
-👤 <strong>Revisado por:</strong> Editor humano — Transparencia Deporte<br>
 📅 <strong>Fecha:</strong> 3 de abril de 2026
 </div>
 
