@@ -59,7 +59,7 @@ feed:
 
 # --- Cusdis (comentarios abiertos, sin login obligatorio) ---
 cusdis:
-  app_id: ""  # Pegar App ID desde cusdis.com
+  app_id: "8f3dac17-32af-430b-9548-3fb94c1c1072"
   host: "https://cusdis.com"
 
 # --- Google Analytics ---
