@@ -20,6 +20,6 @@ Las federaciones deportivas en Chile reciben recursos públicos a través del In
 
 ## ¿Qué viene?
 
-Nuestros primeros documentos disponibles son los **Balances Generales del Club Social y Deportivo Colo-Colo** (2018-2024), que pueden consultarse y descargarse en nuestra seccion de [Documentos](/documentos/). El balance correspondiente al año 2025 ya fue solicitado a traves de la Ley de Transparencia y sera publicado apenas sea recibido.
+Nuestros primeros documentos disponibles son los **Balances Generales de la Federacion Chilena de Balonmano** (2018-2024), que pueden consultarse y descargarse en nuestra seccion de [Documentos](/documentos/). El balance correspondiente al año 2025 ya fue solicitado a traves de la Ley de Transparencia y sera publicado apenas sea recibido.
 
 Invitamos a cualquier persona interesada a seguir nuestro trabajo y a colaborar reportando errores o sugiriendo temas.
