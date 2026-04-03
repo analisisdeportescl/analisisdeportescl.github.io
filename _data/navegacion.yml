@@ -9,5 +9,8 @@
 - titulo: "Columnas"
   url: "/columnas/"
 
+- titulo: "Documentos"
+  url: "/documentos/"
+
 - titulo: "Proyecto"
   url: "/sobre/"
