@@ -1,63 +1,89 @@
 ---
 layout: post
-title: "El directorio que cuesta mas que las ganancias: radiografia financiera del balonmano chileno"
+title: "El balonmano chileno: logros mundiales sobre cimientos fragiles"
 date: 2026-04-03
 category: noticias
-tags: [Balonmano, Federaciones Deportivas, Transparencia, IND, Finanzas del Deporte, Gobernanza Deportiva, Fondos Publicos]
-description: "Un analisis de siete años de balances tributarios revela dependencia casi total del Estado, un deficit historico de $70 millones en 2022 y gastos de gobernanza que superan el resultado neto de la federacion."
+tags: [Balonmano, Federaciones Deportivas, Transparencia, IND, Fondos Publicos, Gobernanza Deportiva, Seleccion Chilena]
+description: "Chile ha consolidado una presencia internacional notable en balonmano, pero su estructura domestica atraviesa una crisis profunda marcada por la ausencia de liga nacional, fondos congelados y la inexistencia de canchas reglamentarias."
 author: periodista
 ---
 
 <div class="ai-badge">
 🤖 <strong>Articulo generado por MILLARAY</strong> — Asistente AI de Transparencia Deporte<br>
-📋 <strong>Basado en:</strong> Balances Tributarios de 8 Columnas (2018-2024), Federacion Deportiva Nacional de Balonmano (RUT 65.040.479-3). Analisis financiero procesado por LIKAN, Asistente AI.<br>
+📋 <strong>Basado en:</strong> Fuentes publicas, medios de comunicacion y documentacion oficial. Ver fuentes citadas en el articulo.<br>
 📅 <strong>Fecha:</strong> 3 de abril de 2026
 </div>
 
-**Un analisis de siete años de balances tributarios revela dependencia casi total del Estado, un deficit historico de $70 millones en 2022 y gastos de gobernanza que superan el resultado neto de la federacion.**
+**Chile ha consolidado una presencia internacional notable en balonmano —con 9 clasificaciones mundiales masculinas consecutivas y un hito historico en el Mundial 2025—, pero su estructura domestica atraviesa una crisis profunda marcada por la ausencia de liga nacional documentada, un escandalo de violencia dirigencial, fondos congelados y la inexistencia de canchas reglamentarias.** La paradoja define al handball chileno contemporaneo: un deporte que compite con las potencias sudamericanas en el exterior, mientras en casa carece de las condiciones minimas para funcionar. La nueva administracion federativa de Elizardo Vera Flores, que asumio en abril de 2024 heredando una federacion bloqueada por el IND, intenta reconstruir desde los escombros institucionales dejados por la gestion anterior, en un contexto donde el deporte federado chileno enfrenta recortes presupuestarios y un cambio de gobierno.
 
 ---
 
-La Federacion Deportiva Nacional de Balonmano cerro 2024 con un resultado positivo de $16,7 millones. En principio, una buena noticia. Pero ese mismo año, la partida de gastos de directorio alcanzo los $18,8 millones —un 112% del resultado neto—. Dicho de otro modo: mantener la mesa directiva cuesta mas de lo que la institucion genera como excedente.
+## La liga nacional de balonmano es un fantasma institucional
 
-Este dato, extraido de los balances tributarios de 8 columnas que la federacion presenta ante el Servicio de Impuestos Internos, es apenas la puerta de entrada a un panorama financiero marcado por la volatilidad, la dependencia estatal y las debilidades de control interno.
+**No existe evidencia publica de que se haya disputado una Liga Nacional de Balonmano en formato completo durante 2025, ni hay informacion sobre una liga programada para 2026.** Las busquedas exhaustivas en medios chilenos, el sitio oficial de la federacion y redes sociales arrojan un vacio informativo total. La ultima Liga Nacional claramente documentada tuvo sus finales en enero de 2022, segun registros de [El Deportero](https://eldeportero.cl).
 
-## Siete años de montaña rusa
+Sin embargo, algun tipo de competencia nacional de clubes debio realizarse, ya que para el Sudamericano de Clubes de mayo de 2025 en Santiago, los equipos chilenos se clasificaron con rankings nacionales: USAB como campeon masculino, Ovalle como campeon femenino. [Cooperativa](https://cooperativa.cl) describio a Ovalle como "actual monarca nacional en femenino y en ambas ramas" en marzo de 2025. Esto sugiere la existencia de torneos internos cuya organizacion y difusion son tan precarias que resultan invisibles para el publico general.
 
-El analisis de la serie completa 2018-2024 muestra una entidad que ha oscilado entre la solvencia tecnica y el colapso. En 2022, la federacion registro el peor resultado de su historia reciente: un deficit de $70,2 millones, cifra que por si sola supera la suma de todos los superavit obtenidos en los otros seis años de la serie. Ese año, los pasivos alcanzaron los $160,6 millones contra activos de apenas $90,4 millones, dejando una cobertura de 0,56 veces —insolvencia tecnica segun cualquier estandar contable basico—.
-
-El resultado acumulado de los siete ejercicios es negativo: **-$26,1 millones**. La federacion destruyo mas valor del que genero en el periodo analizado.
-
-## El modelo pass-through: plata que entra y sale
-
-Entre el 75% y el 97% de los ingresos anuales de la federacion provienen de transferencias del Instituto Nacional de Deportes (IND) bajo la modalidad de proyectos. Sin embargo, los balances revelan un dato clave: en 2022 y 2024, los montos recibidos por proyectos IND calzan al peso exacto con los gastos ejecutados en esos mismos proyectos ($424,2 millones y $309,5 millones, respectivamente). Esto confirma que los fondos estatales operan como traspaso directo: entran y salen sin generar margen alguno para la federacion.
-
-En la practica, el balonmano chileno se financia con recursos que administra pero de los cuales no retiene beneficio. Los ingresos propios —liga y otras fuentes— representaron apenas $103,7 millones en 2024, un 25% del total.
-
-## Gobernanza bajo la lupa
-
-Los documentos registran ademas que entre 2018 y 2019, Victor Sanhueza Campos ejercio simultaneamente como tesorero y contador de la federacion. Esta concentracion de funciones implica que la misma persona preparaba y validaba las cuentas, una debilidad de control interno reconocida por cualquier estandar de buenas practicas en organizaciones sin fines de lucro.
-
-A esto se suma el incremento sostenido de las multas pagadas: de $493 mil en 2021 a $1,67 millones en 2024, un aumento del 238%. Los balances no detallan quien impone estas sanciones ni por que concepto, lo que abre una pregunta pendiente para la investigacion periodistica.
-
-## Señales de recuperacion, pero fragiles
-
-Tras el desastre de 2022, la federacion encadeno dos años consecutivos de superavit: $39,6 millones en 2023 —su mejor resultado historico— y $16,7 millones en 2024. Tambien se observa una diversificacion incipiente: en 2024 aparece una partida de "Otros Ingresos" por $84,4 millones (20,4% del total) que no existia antes, reduciendo la dependencia relativa del IND del 97% al 75%. Los ingresos por concepto de liga crecieron un 34,5% entre 2022 y 2024.
-
-El cambio de directiva tambien marca un punto de inflexion: en 2024 asumieron Elizardo Vera Flores como presidente y Jaime Guido Muñoz Fernandez como tesorero, separando ademas las funciones de tesoreria y contabilidad con la incorporacion de Carol Rojas Alvarez.
-
-## El contexto que importa
-
-El presupuesto total 2024 de la Federacion de Balonmano ($413 millones en ingresos) equivale aproximadamente al salario anual de dos a tres jugadores de primera division del futbol chileno. El deficit de 2022 ($70 millones) es comparable a lo que el IND destina a un programa completo de alto rendimiento.
-
-Estas cifras no son excepcionales en el deporte chileno: la dependencia estatal de entre 75% y 97% es representativa del modelo financiero que enfrentan la mayoria de las federaciones deportivas nacionales fuera del futbol. El balonmano, en ese sentido, es un caso de estudio de un problema estructural mas amplio.
-
-Los balances tributarios son documentos de acceso publico bajo la Ley 20.285 de Transparencia. Sin embargo, no equivalen a estados financieros auditados ni contienen las notas explicativas que permitirian comprender el detalle de cada partida. La publicacion de memorias anuales con estados financieros completos y auditados sigue siendo una cuenta pendiente del deporte federado en Chile.
+El sitio web oficial de la federacion ([balonmanochile.com](https://www.balonmanochile.com)) tiene sus ultimas noticias fechadas en **mayo de 2024** —sobre los Juegos Bolivarianos de la Juventud— y no contiene informacion sobre competencias de clubes. La cuenta de Instagram de la Liga Nacional (@lnbm.chile) cuenta con apenas **1.626 seguidores y solo 24 publicaciones**. La cuenta de Twitter (@LigaBMChile) tiene 142 seguidores y cero publicaciones. El ecosistema digital de la liga domestica es, en la practica, inexistente.
 
 ---
 
-📄 **Documentacion fuente:** [Descargar Balances Tributarios 2018-2024 (PDF)](/documentos/)
+## Las selecciones nacionales brillan en un contraste brutal
 
-📊 **Ver visualizacion interactiva:** [Dashboard Financiero — Balonmano](/dashboard-balonmano/)
+La seleccion masculina protagonizo un **hito historico** en el Mundial 2025 disputado en Croacia, Dinamarca y Noruega. Por primera vez en ocho participaciones mundialistas, Chile avanzo al main round tras una victoria clave sobre Japon (31-26) en la fase de grupos en Oslo. Aunque luego cayo ante Brasil (28-24), Noruega (22-39) y Portugal (46-28), el **puesto 24° mundial** represento un avance significativo. Erwin Feuchtmann se ubico como el **6° maximo goleador del torneo con 40 goles**, consolidandose como referente continental.
 
-**Fuente:** Balances Tributarios de 8 Columnas (2018-2024), Federacion Deportiva Nacional de Balonmano (RUT 65.040.479-3). Analisis financiero: LIKAN, Asistente AI de Transparencia Deporte. Documentacion publica obtenida bajo Ley 20.285.
+En enero de 2026, la seleccion masculina aseguro su clasificacion al **9° Mundial consecutivo** (Alemania 2027) al obtener el tercer puesto en el Campeonato Sudamericano y Centroamericano disputado en Asuncion, Paraguay. Chile vencio comodamente a Uruguay (40-22) y Peru (40-12), pero cayo ante Brasil (21-34) y Argentina (23-37), confirmando su posicion como **tercera fuerza continental**, consistentemente detras del duopolio argentino-brasileño.
+
+La seleccion femenina ("Las Lobas") atraviesa un momento mas dificil. Tras una participacion memorable en el Mundial 2023 —donde regresaron tras 14 años de ausencia y lograron tres victorias para terminar 27°—, el equipo **no logro clasificar al Mundial Femenino 2025** al quedar quinto en el Sudamericano de Niteroi (Brasil) en noviembre de 2024, superadas por Brasil, Argentina, Uruguay y Paraguay. En marzo de 2026, Guillermo Milano dejo de ser entrenador de la seleccion femenina, añadiendo incertidumbre al proyecto.
+
+El balonmano playa protagonizo una crisis publica en **febrero de 2026**: las selecciones anunciaron que no podrian asistir al Clasificatorio al Mundial en Rosario, Argentina, por falta de los aproximadamente **15 millones de pesos** necesarios. La Confederacion Sudamericana (COSCABAL) habia comunicado el torneo por WhatsApp con menos de un mes de anticipacion. Tras gestiones de ultimo minuto y aportes de empresas regionales, finalmente viajaron, pero el episodio expuso la precariedad financiera cronica.
+
+---
+
+## Una federacion que Vera heredo en ruinas
+
+Elizardo Vera Flores, ex seleccionado nacional de 40 años e integrante de la primera generacion que clasifico a un Mundial, asumio la presidencia de la Federacion Deportiva Nacional de Balonmano en **abril de 2024** con un mandato de aproximadamente cinco años. Lo que encontro fue devastador.
+
+La administracion anterior de **Juan Pablo Montes Mery** dejo **cuatro supervigilancias activas del IND**, **110 millones de pesos mal rendidos** de la Liga Nacional 2021-2022, una demanda en curso del Ministerio del Deporte sin responder, actas defectuosas, balances no aprobados y la ausencia de una encargada institucional del Protocolo 22 contra el abuso. La federacion estaba **bloqueada para recibir fondos publicos** —ni siquiera se podian pagar sueldos— y habia firmado un auspicio con BetWarrior, plataforma de apuestas no regulada en Chile, a traves de un convenio del Comite Olimpico que genero problemas legales.
+
+Vera levanto las supervigilancias en mes y medio mediante asambleas extraordinarias y planes estrategicos, pero reconocio en entrevista con [La Tercera](https://www.latercera.com) (febrero de 2026) que la estabilizacion financiera completa tomara "unos ocho años". Su gestion ha priorizado la descentralizacion regional, la generacion de recursos independientes (antes el 99% eran estatales) y la creacion de politicas internas de traspaso entre directivas.
+
+Sin embargo, un **escandalo de violencia** ensombrecio la gestion en **marzo de 2025**: Vera protagonizo una pelea fisica con el entrenador Cristian Retamal Vasquez en las instalaciones del CEO de Ñuñoa. Ambos fueron **detenidos por Carabineros**, con denuncias cruzadas —Vera acuso agresion; Retamal imputo daños a su vehiculo— y llegaron a un acuerdo reparatorio en el 8° Juzgado de Garantia. El **Comite Olimpico de Chile condeno energicamente** el hecho, calificandolo como "absolutamente opuesto a lo que el deporte federado debe proyectar" e inicio una investigacion.
+
+Vera tambien ha denunciado publicamente que **"hoy no tenemos canchas con medidas reglamentarias"**: los polideportivos municipales no incorporan las dimensiones de 40x20 metros necesarias para balonmano. En los Juegos Deportivos de La Araucania, las mujeres jugaron en una cancha mas pequeña que la reglamentaria. La federacion ha establecido que si las condiciones minimas no se cumplen, no participara en eventos.
+
+---
+
+## El IND recorta presupuesto en un contexto de escandalos y cambio de gobierno
+
+El contexto del deporte federado chileno es turbulento. El presupuesto del Ministerio del Deporte para 2026 fue de **$191.483 millones de pesos**, una **reduccion del 3,9%** respecto a 2025. De estos, $30.513 millones se destinan al fortalecimiento del deporte de rendimiento convencional y paralimpico, y $3.547 millones a competencias federadas. La federacion de balonmano recibio aproximadamente **$424 millones en 2022**, ubicandola como la cuarta federacion con mas financiamiento estatal —detras de tenis ($634M), hockey cesped ($631M) y baloncesto ($536M)— segun datos de la columna de Claudio Bossay en [ElAgora](https://elagora.cl).
+
+La mayor polemica del deporte chileno reciente fue el **escandalo de rendiciones de los Panamericanos Santiago 2023**: la Contraloria revelo en enero de 2024 que el 68,5% de los recursos transferidos —aproximadamente **$194.000 millones de un total de $282.484 millones**— no habian sido rendidos. Se enviaron antecedentes al Consejo de Defensa del Estado por $17.000 millones que excedieron plazo.
+
+**Israel Castro**, director del IND durante el gobierno de Boric, renuncio en **diciembre de 2025** tras la polemica por programar un festival musical (Loserville, con Limp Bizkit) en el Estadio Nacional el mismo dia de la final del Mundial de Hockey Cesped Femenino Junior. Con el cambio de gobierno en **marzo de 2026**, Jose Antonio Kast designo a **Natalia Duco** —ex lanzadora de bala olimpica con cuatro Juegos Olimpicos pero suspendida tres años por dopaje en 2018— como Ministra del Deporte, nombramiento que genero debate publico.
+
+La **reforma a la Ley de Sociedades Anonimas Deportivas Profesionales**, aprobada por la Camara con 148 votos a favor en marzo de 2026, tambien involucra al balonmano. La federacion de balonmano, junto con basquetbol, voleibol, hockey y patinaje, firmo un escrito oponiendose a la ley, alegando que genera **costos desproporcionados para deportes amateurs**. Vera declaro: "El deporte federal en Chile practicamente es amateur."
+
+---
+
+## La cobertura mediatica es reactiva y el ecosistema digital, precario
+
+La cobertura del balonmano chileno en medios mainstream es **intermitente y concentrada en eventos internacionales**. [La Tercera](https://www.latercera.com) (seccion "El Deportivo") es el medio con mayor profundidad, publicando entrevistas extensas a Vera y cobertura partido a partido de los Mundiales. [BioBioChile](https://www.biobiochile.cl) y [Cooperativa](https://cooperativa.cl) cubren eventos mayores. [Emol](https://www.emol.com) y T13 publican resultados de partidos mundialistas. **El Mercurio no tiene cobertura directa identificable**, y ADN Radio aparece solo como fuente citada en otros medios.
+
+La liga domestica y los problemas estructurales son practicamente **invisibles** para los medios entre grandes eventos. [TodoHandball.com](https://todohandball.com), medio argentino especializado, ofrece cobertura regional mas constante.
+
+Un dato adicional relevante: en julio de 2024, la **Comision de Deportes de la Camara de Diputados** trato "la situacion del entrenador y head coach de la Federacion Chilena de Balonmano, don Felipe Barrientos", aunque los detalles del caso no se encontraron en fuentes publicas. Barrientos fue DT de la seleccion femenina durante su participacion historica en el Mundial 2023.
+
+---
+
+## Conclusion: un deporte que sobrevive por sus jugadores, no por su sistema
+
+El balonmano chileno encarna una contradiccion estructural que se ha agudizado en 2025-2026. Sus **24 jugadores en ligas extranjeras** (principalmente España), la consistencia de nueve clasificaciones mundiales masculinas consecutivas y los hitos deportivos recientes demuestran un talento que el sistema no merece. La liga nacional es un fantasma sin presencia digital ni cobertura mediatica. La federacion opera como una entidad en rehabilitacion institucional tras años de mala gestion, ahora complicada por un incidente de violencia de su propio presidente. El financiamiento estatal, aunque superior al de muchas federaciones, resulta insuficiente ante la falta de generacion de recursos propios y la dependencia casi total del Estado.
+
+El dato mas revelador quizas sea este: un deporte capaz de competir en Mundiales **no tiene una sola cancha reglamentaria en todo Chile**. La nueva administracion de Vera tiene merito en haber destrabado la crisis administrativa heredada y mantener la competitividad internacional, pero el escandalo de marzo de 2025 y la persistente crisis del balonmano playa sugieren que la reconstruccion sera mas larga y accidentada de lo anticipado. Con un nuevo gobierno, una ministra del Deporte controversial y presupuestos en baja, el balonmano chileno seguira dependiendo de la resiliencia individual de sus deportistas mas que de un sistema que los respalde.
+
+---
+
+📄 **Documentacion financiera:** [Ver Balances Tributarios 2018-2024](/documentos/) | [Dashboard Financiero Interactivo](/dashboard-balonmano/)
+
+**Fuentes:** Balances Tributarios de la Federacion (2018-2024), obtenidos bajo [Ley 20.285 de Transparencia](https://www.bcn.cl/leychile/navegar?idNorma=276363). Medios citados: La Tercera, Cooperativa, BioBioChile, Emol, El Deportero, TodoHandball.com, ElAgora. Sitio oficial: [balonmanochile.com](https://www.balonmanochile.com). Analisis financiero: LIKAN, Asistente AI de Transparencia Deporte.
