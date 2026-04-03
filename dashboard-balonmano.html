@@ -284,7 +284,7 @@ permalink: /dashboard-balonmano/
   <h2>Evolucion de multas pagadas</h2>
 </div>
 <div class="dash-chart-card">
-  <canvas id="multasChart" height="220"></canvas>
+  <canvas id="multasChart" height="180"></canvas>
   <p style="text-align:center;font-size:0.8rem;color:#a78bfa;font-weight:600;margin-top:10px;">
     +238% de aumento entre 2021 y 2024 — sin detalle de origen en los balances
   </p>
@@ -492,12 +492,31 @@ new Chart(multasCtx, {
   type: 'bar',
   data: {
     labels: ['2021', '2022', '2024'],
-    datasets: [{ label: 'Multas ($M CLP)', data: [0.494, 0.480, 1.671], backgroundColor: 'rgba(167,139,250,0.7)', borderColor: '#a78bfa', borderWidth: 2, borderRadius: 4 }]
+    datasets: [{
+      label: 'Multas (miles CLP)',
+      data: [494, 480, 1671],
+      backgroundColor: 'rgba(167,139,250,0.7)',
+      borderColor: '#a78bfa',
+      borderWidth: 2,
+      borderRadius: 4,
+      maxBarThickness: 60,
+      barPercentage: 0.5
+    }]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(ctx) { return '$' + ctx.parsed.y.toFixed(3) + 'M CLP'; } } } },
-    scales: { y: { ticks: { callback: function(v) { return '$' + v + 'M'; } }, grid: { color: '#21262d' } }, x: { grid: { display: false } } }
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: function(ctx) { return '$' + ctx.parsed.y.toLocaleString('es-CL') + ' mil CLP'; } } }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { callback: function(v) { return '$' + v + 'K'; } },
+        grid: { color: '#21262d' }
+      },
+      x: { grid: { display: false } }
+    }
   }
 });
 </script>
