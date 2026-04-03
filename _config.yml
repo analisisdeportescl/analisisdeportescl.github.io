@@ -70,7 +70,7 @@ giscus:
 
 # --- Google Analytics ---
 # Obtener en: https://analytics.google.com → Crear propiedad → Flujo web → Measurement ID
-google_analytics: ""  # Pegar aca tu ID (formato G-XXXXXXXXXX)
+google_analytics: "G-W8SP0EEE26"
 
 # --- Reporte de errores (GitHub Issues) ---
 github_repo: "https://github.com/analisisdeportescl/analisisdeportescl.github.io"
