@@ -68,6 +68,10 @@ giscus:
   theme: "preferred_color_scheme"
   lang: "es"
 
+# --- Google Analytics ---
+# Obtener en: https://analytics.google.com → Crear propiedad → Flujo web → Measurement ID
+google_analytics: ""  # Pegar aca tu ID (formato G-XXXXXXXXXX)
+
 # --- Reporte de errores (GitHub Issues) ---
 github_repo: "https://github.com/analisisdeportescl/analisisdeportescl.github.io"
 google_form_contacto: ""

@@ -68,3 +68,17 @@ Nuestro proceso es simple y replicable:
 **Compartiendo documentos:** Si tienes acceso a documentos financieros públicos del deporte chileno, compártelos en nuestro [foro de discusión]({{ site.github_repo }}/discussions).
 
 **Difundiendo:** Comparte nuestros reportes. La fiscalización ciudadana funciona cuando más personas prestan atención.
+
+## Aviso legal
+
+**Contenido generado por inteligencia artificial.** Todos los articulos, reportes y analisis publicados en este sitio son generados total o parcialmente por asistentes de inteligencia artificial (LIKAN y MILLARAY). Cada publicacion indica claramente que herramienta la genero.
+
+**Sin asesoria profesional.** La informacion publicada en Transparencia Deporte se basa en documentos publicos y tiene fines exclusivamente informativos y periodisticos. No constituye asesoria financiera, legal, contable ni de ningun otro tipo profesional.
+
+**Precision de la informacion.** Si bien nos esforzamos por ser rigurosos, los procesos automatizados pueden contener errores. Los creadores y responsables de esta plataforma no se hacen responsables por eventuales imprecisiones en los datos, cifras o interpretaciones publicadas. Los documentos originales estan disponibles para descarga y verificacion independiente en nuestra [seccion de documentos](/documentos/).
+
+**Opiniones.** Las opiniones, analisis y conclusiones expresadas en los articulos y columnas no representan necesariamente la posicion personal de los creadores o responsables del proyecto.
+
+**Comentarios de terceros.** Los comentarios publicados por usuarios en las secciones de discusion son responsabilidad exclusiva de sus autores. Transparencia Deporte no se hace responsable por el contenido generado por terceros. Nos reservamos el derecho de moderar o eliminar comentarios que contengan desinformacion, ataques personales o contenido inapropiado.
+
+**Correcciones.** Si detectas un dato incorrecto, una cifra equivocada o cualquier error en nuestras publicaciones, puedes reportarlo a traves de [GitHub Issues]({{ site.github_repo }}/issues) o usando el boton de reporte de errores al final de cada articulo. Toda correccion verificada sera incorporada a la brevedad.
