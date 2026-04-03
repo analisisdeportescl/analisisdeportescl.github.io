@@ -1,0 +1,11 @@
+{% if site.cusdis.app_id and site.cusdis.app_id != "" %}
+<div id="cusdis_thread"
+  data-host="{{ site.cusdis.host }}"
+  data-app-id="{{ site.cusdis.app_id }}"
+  data-page-id="{{ page.url }}"
+  data-page-url="{{ page.url | absolute_url }}"
+  data-page-title="{{ page.title }}"
+  data-theme="dark">
+</div>
+<script async defer src="{{ site.cusdis.host }}/js/cusdis.es.js"></script>
+{% endif %}
