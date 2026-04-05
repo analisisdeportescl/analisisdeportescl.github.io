@@ -137,11 +137,10 @@ permalink: /dashboard-balonmano/
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBSSt0DLGe1DUUW2JBJhEOEIBpOLWSYoqMHhjLMJRwDmPODtMEAVIoMKTszKrMYbgJJQkGPHA5C8VHFMd0Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- HEADER -->
 <div style="margin-bottom:8px;">
-  <div class="dash-badge">🤖 MILLARAY — Transparencia Deporte</div>
+  <div class="dash-badge">📊 LIKAN — Transparencia Deporte</div>
   <h1 class="dash-title">Radiografia financiera: Federacion de Balonmano</h1>
   <p class="dash-subtitle">Balances Tributarios 2018-2024 · RUT 65.040.479-3 · Ramon Cruz 1176, Ñuñoa</p>
 </div>
@@ -347,7 +346,7 @@ permalink: /dashboard-balonmano/
 <div class="dash-footer">
   <div class="dash-footer-title">📋 Metodologia y limitaciones</div>
   Cifras expresadas en millones de pesos chilenos nominales, sin ajuste por inflacion.
-  Analisis financiero procesado por LIKAN, Asistente AI. Visualizacion generada por MILLARAY, Asistente AI.
+  Analisis financiero procesado por LIKAN, Asistente AI.
   Fuente: Balances Tributarios de 8 Columnas (2018-2024), Federacion Deportiva Nacional de Balonmano
   (RUT 65.040.479-3), documentos de acceso publico bajo
   <a href="https://www.bcn.cl/leychile/navegar?idNorma=276363" target="_blank" rel="noopener" style="color:var(--color-accent)">Ley 20.285 de Transparencia</a>.
@@ -389,8 +388,17 @@ Chart.defaults.color = '#8b949e';
 Chart.defaults.borderColor = '#21262d';
 Chart.defaults.font.family = "'Source Sans 3', system-ui, sans-serif";
 
-var mainCtx = document.getElementById('mainChart').getContext('2d');
 var mainChart;
+
+function getMainCtx() {
+  var wrap = document.querySelector('.dash-chart-wrap');
+  var old = document.getElementById('mainChart');
+  if (old) old.remove();
+  var c = document.createElement('canvas');
+  c.id = 'mainChart';
+  wrap.appendChild(c);
+  return c.getContext('2d');
+}
 
 function buildResultadoChart() {
   return {
@@ -442,18 +450,31 @@ function buildCoberturaChart() {
     type: 'line',
     data: {
       labels: years,
-      datasets: [{
-        label: 'Cobertura (Activo/Pasivo)',
-        data: coberturas,
-        borderColor: '#22d3ee', backgroundColor: 'rgba(34,211,238,0.08)',
-        borderWidth: 3, fill: true, tension: 0.3, pointRadius: 5, pointBackgroundColor: '#22d3ee'
-      }]
+      datasets: [
+        {
+          label: 'Cobertura (Activo/Pasivo)',
+          data: coberturas,
+          borderColor: '#22d3ee', backgroundColor: 'rgba(34,211,238,0.08)',
+          borderWidth: 3, fill: true, tension: 0.3, pointRadius: 5, pointBackgroundColor: '#22d3ee'
+        },
+        {
+          label: 'Umbral 1x',
+          data: Array(years.length).fill(1),
+          borderColor: '#f59e0b', borderWidth: 1, borderDash: [5, 5],
+          pointRadius: 0, fill: false
+        }
+      ]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: {
-        tooltip: { callbacks: { label: function(ctx) { var v = ctx.parsed.y; return 'Cobertura: ' + v.toFixed(2) + 'x' + (v < 1 ? ' ⚠️ Insolvencia tecnica' : ''); } } },
-        annotation: { annotations: { umbral: { type: 'line', yMin: 1, yMax: 1, borderColor: '#f59e0b', borderWidth: 1, borderDash: [5, 5], label: { content: 'Umbral 1x', display: true, color: '#f59e0b', font: { size: 11 } } } } }
+        tooltip: {
+          filter: function(item) { return item.datasetIndex === 0; },
+          callbacks: { label: function(ctx) { var v = ctx.parsed.y; return 'Cobertura: ' + v.toFixed(2) + 'x' + (v < 1 ? ' — Insolvencia tecnica' : ''); } }
+        },
+        legend: {
+          labels: { filter: function(item) { return item.text !== 'Umbral 1x'; } }
+        }
       },
       scales: {
         y: { ticks: { callback: function(v) { return v + 'x'; } }, grid: { color: '#1e293b' } },
@@ -465,11 +486,12 @@ function buildCoberturaChart() {
 
 function switchChart(type) {
   if (mainChart) mainChart.destroy();
+  var ctx = getMainCtx();
   var config;
   if (type === 'resultado') config = buildResultadoChart();
   else if (type === 'ingresos') config = buildIngresosChart();
   else config = buildCoberturaChart();
-  mainChart = new Chart(mainCtx, config);
+  mainChart = new Chart(ctx, config);
 }
 
 document.getElementById('tabs-main').addEventListener('click', function(e) {
@@ -480,7 +502,7 @@ document.getElementById('tabs-main').addEventListener('click', function(e) {
   switchChart(btn.getAttribute('data-chart'));
 });
 
-mainChart = new Chart(mainCtx, buildResultadoChart());
+mainChart = new Chart(getMainCtx(), buildResultadoChart());
 
 // PIE CHART
 var pieCtx = document.getElementById('pieChart').getContext('2d');
