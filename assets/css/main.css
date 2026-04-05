@@ -404,6 +404,16 @@ img { max-width: 100%; height: auto; }
   margin: 2rem 0;
 }
 
+/* === LYKET LIKE BUTTON === */
+.lyket-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
 /* === SHARE BUTTONS === */
 .compartir {
   display: flex;
