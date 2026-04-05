@@ -54,8 +54,6 @@ El balonmano chileno ha demostrado que puede competir internacionalmente con rec
 
 ¿Cuánto más puede durar?
 
-*Esta semana, Transparencia Deporte publicará un reportaje sobre la salida de Guillermo Milano y lo que viene para el proyecto femenino. La próxima semana: la radiografía financiera completa del balonmano chileno, con siete años de balances tributarios analizados cifra por cifra.*
-
 ---
 
 📊 **[Ver dashboard financiero interactivo: Balonmano 2018-2024](/dashboard-balonmano/)**
