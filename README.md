@@ -1,20 +1,20 @@
 # Transparencia Deporte
 
-Periodismo financiero deportivo en Chile.
+Transparencia financiera deportiva en Chile.
 
 Sitio web: [transparencia-deporte-cl.github.io](https://transparencia-deporte-cl.github.io)
 
 ## Stack
 
 - [Jekyll](https://jekyllrb.com/) + [GitHub Pages](https://pages.github.com/)
-- [Giscus](https://giscus.app/) para comentarios
+- [Cusdis](https://cusdis.com/) para comentarios
 - GitHub Issues para reporte de errores
 
 ## Estructura
 
 ```
 _posts/reportes/    → Análisis financieros
-_posts/noticias/    → Notas periodísticas
+_posts/noticias/    → Noticias informativas
 _posts/columnas/    → Columnas de opinión
 _layouts/           → Plantillas HTML
 _includes/          → Componentes reutilizables

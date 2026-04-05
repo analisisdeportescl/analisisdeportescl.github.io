@@ -4,7 +4,7 @@ title: "Bienvenidos a Transparencia Deporte"
 date: 2026-04-02
 category: noticias
 tags: [transparencia-deporte, lanzamiento]
-author: periodista
+author: redactor
 description: "Presentamos Transparencia Deporte, un proyecto informativo de transparencia financiera deportiva en Chile."
 ---
 

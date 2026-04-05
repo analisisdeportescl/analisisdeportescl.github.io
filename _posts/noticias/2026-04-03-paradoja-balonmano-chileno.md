@@ -5,7 +5,7 @@ date: 2026-04-03
 category: noticias
 tags: [Balonmano, Seleccion Chilena, Liga Nacional, Infraestructura Deportiva, IND, Transparencia]
 description: "Chile acumula nueve clasificaciones mundiales consecutivas en balonmano masculino y es la tercera fuerza del continente. Pero en casa no hay liga con continuidad, no existe una sola cancha reglamentaria y la seleccion de balonmano playa casi no viajo a un clasificatorio por falta de $15 millones."
-author: periodista
+author: redactor
 ---
 
 <div class="ai-badge">
