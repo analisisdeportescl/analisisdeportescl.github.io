@@ -7,8 +7,8 @@
   bio: "Encargado del análisis de balances, memorias y documentos financieros de organismos deportivos."
 
 - id: "periodista"
-  nombre: "Periodista"
-  rol: "Redacción periodística"
-  bio: "Encargado de la cobertura noticiosa y columnas de opinión sobre finanzas del deporte chileno."
+  nombre: "Redactor"
+  rol: "Redacción informativa"
+  bio: "Encargado de la redacción de noticias y columnas sobre transparencia financiera del deporte chileno."
 
 # NOTA: Reemplazar nombres genéricos por los reales cuando el equipo lo decida

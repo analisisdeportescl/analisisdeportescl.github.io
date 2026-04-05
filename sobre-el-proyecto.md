@@ -13,7 +13,7 @@ Creemos que la transparencia no debería requerir un título en contabilidad. Lo
 
 ## ¿Por qué inteligencia artificial?
 
-Porque la tecnología nos permite procesar grandes volúmenes de información financiera de forma rápida y consistente. La AI complementa el trabajo periodístico, permitiéndonos analizar más documentos con mayor profundidad.
+Porque la tecnología nos permite procesar grandes volúmenes de información financiera de forma rápida y consistente. La AI complementa el trabajo informativo, permitiéndonos analizar más documentos con mayor profundidad.
 
 Somos completamente transparentes sobre el uso de AI: cada artículo indica claramente cuál asistente lo generó.
 
@@ -30,8 +30,8 @@ Somos completamente transparentes sobre el uso de AI: cada artículo indica clar
   <div class="team-card">
     <div class="emoji">📝</div>
     <h3>MILLARAY</h3>
-    <div class="role">Periodista</div>
-    <p><strong>Motor Inteligente de Lectura, Lenguaje y Reportería.</strong> Redacta notas periodísticas y contextualiza la información financiera para hacerla comprensible.</p>
+    <div class="role">Redactor</div>
+    <p><strong>Motor Inteligente de Lectura, Lenguaje y Reportería.</strong> Redacta notas informativas y contextualiza la información financiera para hacerla comprensible.</p>
     <p class="origin">"Millaray" significa flor de oro en mapudungún — porque buscamos hacer florecer información que estaba oculta.</p>
   </div>
 </div>
@@ -48,7 +48,7 @@ Nuestro proceso es simple y replicable:
 
 **2. Análisis:** LIKAN procesa cada documento identificando cifras clave, calculando ratios financieros y detectando hallazgos relevantes.
 
-**3. Redacción:** MILLARAY transforma el análisis en contenido periodístico accesible para público general.
+**3. Redacción:** MILLARAY transforma el análisis en contenido informativo accesible para público general.
 
 **4. Publicación:** El artículo se publica junto con el documento original descargable para que cualquiera pueda verificar nuestro trabajo.
 
@@ -73,7 +73,7 @@ Nuestro proceso es simple y replicable:
 
 **Contenido generado por inteligencia artificial.** Todos los articulos, reportes y analisis publicados en este sitio son generados total o parcialmente por asistentes de inteligencia artificial (LIKAN y MILLARAY). Cada publicacion indica claramente que herramienta la genero.
 
-**Sin asesoria profesional.** La informacion publicada en Transparencia Deporte se basa en documentos publicos y tiene fines exclusivamente informativos y periodisticos. No constituye asesoria financiera, legal, contable ni de ningun otro tipo profesional.
+**Sin asesoria profesional.** La informacion publicada en Transparencia Deporte se basa en documentos publicos y tiene fines exclusivamente informativos y de transparencia. No constituye asesoria financiera, legal, contable ni de ningun otro tipo profesional.
 
 **Precision de la informacion.** Si bien nos esforzamos por ser rigurosos, los procesos automatizados pueden contener errores. Los creadores y responsables de esta plataforma no se hacen responsables por eventuales imprecisiones en los datos, cifras o interpretaciones publicadas. Los documentos originales estan disponibles para descarga y verificacion independiente en nuestra [seccion de documentos](/documentos/).
 

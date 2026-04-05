@@ -1,11 +1,11 @@
 # =============================================================================
 # Transparencia Deporte — Configuración principal de Jekyll
-# Sitio de periodismo financiero deportivo chileno
+# Sitio informativo de transparencia financiera deportiva en Chile
 # =============================================================================
 
 # --- Datos del sitio ---
 title: "Transparencia Deporte"
-description: "Periodismo financiero deportivo en Chile. Reportes, análisis y noticias sobre las finanzas del deporte chileno."
+description: "Transparencia financiera deportiva en Chile. Reportes, análisis y noticias sobre las finanzas del deporte chileno."
 url: "https://analisisdeportescl.github.io"
 baseurl: ""
 lang: "es-CL"

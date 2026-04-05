@@ -5,12 +5,12 @@ date: 2026-04-02
 category: noticias
 tags: [transparencia-deporte, lanzamiento]
 author: periodista
-description: "Presentamos Transparencia Deporte, un proyecto de periodismo financiero deportivo enfocado en Chile."
+description: "Presentamos Transparencia Deporte, un proyecto informativo de transparencia financiera deportiva en Chile."
 ---
 
 ## Un nuevo espacio para la transparencia financiera del deporte chileno
 
-Hoy lanzamos **Transparencia Deporte**, un proyecto de periodismo financiero deportivo enfocado en Chile.
+Hoy lanzamos **Transparencia Deporte**, un proyecto informativo de transparencia financiera deportiva enfocado en Chile.
 
 Nuestro objetivo es simple: tomar la información financiera pública de federaciones, clubes y organismos deportivos chilenos, y hacerla accesible y comprensible para todos.
 
