@@ -70,15 +70,6 @@ img { max-width: 100%; height: auto; }
   color: var(--color-text-heading);
   text-decoration: none;
   letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.site-logo-img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
 }
 .site-logo span { color: var(--color-accent); }
 
