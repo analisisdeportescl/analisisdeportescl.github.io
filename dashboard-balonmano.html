@@ -5,597 +5,344 @@ permalink: /dashboard-balonmano/
 ---
 
 <style>
-  .dash-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(212,160,18,0.1); border: 1px solid rgba(212,160,18,0.2);
-    border-radius: 20px; padding: 4px 14px; font-size: 11px; color: var(--color-accent);
-    margin-bottom: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
-  }
-  .dash-title {
-    font-size: 1.4rem; font-weight: 800; line-height: 1.2;
-    margin: 0 0 8px; color: var(--color-text-heading);
-  }
-  .dash-subtitle { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; }
-  .dash-metrics { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
-  .dash-metric {
-    background: var(--color-bg-card); border: 1px solid var(--color-border);
-    border-radius: var(--radius); padding: 16px 14px; flex: 1 1 140px;
-    min-width: 140px; position: relative; overflow: hidden;
-  }
-  .dash-metric .bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-  .dash-metric-label {
-    font-size: 0.72rem; color: var(--color-text-muted); margin-bottom: 4px;
-    letter-spacing: 0.05em; text-transform: uppercase;
-  }
-  .dash-metric-value {
-    font-size: 1.5rem; font-weight: 800; line-height: 1.1;
-    font-family: 'SF Mono', 'Menlo', monospace;
-  }
-  .dash-metric-sub { font-size: 0.7rem; color: var(--color-text-muted); margin-top: 5px; }
-
-  .dash-section { display: flex; align-items: center; gap: 10px; margin: 32px 0 16px; }
-  .dash-num {
-    background: var(--color-accent); color: var(--color-bg); font-weight: 800;
-    width: 28px; height: 28px; border-radius: 50%; display: flex;
-    align-items: center; justify-content: center; font-size: 13px;
-    font-family: 'SF Mono', 'Menlo', monospace; flex-shrink: 0;
-  }
-  .dash-section h2 {
-    font-size: 1.05rem !important; font-weight: 700; color: var(--color-text-heading);
-    margin: 0 !important; padding: 0 !important; border: none !important;
+  /* ── DASHBOARD VARIABLES (dark theme) ── */
+  .dash {
+    --d-bg-card: var(--color-bg-card);
+    --d-bg-card-alt: #1e2536;
+    --d-text: var(--color-text-heading);
+    --d-text2: var(--color-text);
+    --d-text3: var(--color-text-muted);
+    --d-border: var(--color-border);
+    --d-border-light: var(--color-border-light);
+    --d-green: #34d399;
+    --d-green-bg: rgba(52,211,153,0.12);
+    --d-red: #f87171;
+    --d-red-bg: rgba(248,113,113,0.12);
+    --d-amber: var(--color-accent);
+    --d-amber-bg: rgba(212,160,18,0.12);
+    --d-accent: var(--color-accent);
+    --d-accent-dark: #f0c940;
   }
 
-  .dash-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-  .dash-tab {
-    background: transparent; color: var(--color-text-muted);
-    border: 1px solid var(--color-border); border-radius: var(--radius);
-    padding: 6px 14px; font-size: 0.8rem; font-weight: 500;
-    cursor: pointer; transition: all 0.2s; font-family: inherit;
+  /* ── HEADER ── */
+  .dash-header {
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--d-text);
+    padding-bottom: 1.25rem;
   }
-  .dash-tab.active {
-    background: var(--color-accent); color: var(--color-bg);
-    border-color: var(--color-accent); font-weight: 700;
+  .dash-header-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--d-accent); margin-bottom: 0.5rem;
   }
-  .dash-tab:hover:not(.active) { border-color: var(--color-text-muted); }
-
-  .dash-card {
-    background: var(--color-bg-card); border: 1px solid var(--color-border);
-    border-radius: var(--radius); padding: 16px 14px;
+  .dash-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700;
+    line-height: 1.2; color: var(--d-text); margin-bottom: 0.5rem;
   }
-  .dash-chart-wrap { position: relative; height: 280px; }
-
-  .dash-semaforo {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px;
-  }
-  .dash-sem-item {
-    background: var(--color-bg-card); border: 1px solid var(--color-border);
-    border-radius: var(--radius); padding: 12px 10px; text-align: center;
-  }
-  .dash-sem-emoji { font-size: 22px; }
-  .dash-sem-year { font-size: 14px; font-weight: 700; color: var(--color-text-heading); margin: 2px 0; }
-  .dash-sem-amount { font-size: 15px; font-weight: 800; font-family: 'SF Mono', 'Menlo', monospace; }
-  .dash-sem-label { font-size: 0.6rem; color: var(--color-text-muted); margin-top: 3px; line-height: 1.3; }
-
-  .dash-comp-wrap {
-    background: var(--color-bg-card); border: 1px solid var(--color-border);
-    border-radius: var(--radius); padding: 20px;
-    display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
-  }
-  .dash-comp-chart { flex: 0 0 180px; }
-  .dash-comp-legend { flex: 1; min-width: 180px; }
-  .dash-leg-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-  .dash-leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
-  .dash-leg-name { font-size: 0.82rem; color: var(--color-text); font-weight: 600; }
-  .dash-leg-sub { font-size: 0.72rem; color: var(--color-text-muted); }
-  .dash-leg-pct { font-size: 0.95rem; font-weight: 800; margin-left: auto; font-family: 'SF Mono', 'Menlo', monospace; }
-  .dash-comp-note {
-    font-size: 0.7rem; color: var(--color-text-muted); margin-top: 8px;
-    padding-top: 8px; border-top: 1px solid var(--color-border);
+  .dash-header-sub {
+    font-size: 14px; color: var(--d-text2); max-width: 600px;
   }
 
-  /* Firmantes table */
-  .dash-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .dash-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
-  .dash-table thead tr { background: rgba(255,255,255,0.03); }
-  .dash-table th {
-    padding: 10px 12px; text-align: left; color: var(--color-text-muted);
-    font-weight: 600; white-space: nowrap;
-  }
-  .dash-table td {
-    padding: 10px 12px; color: var(--color-text);
-    border-top: 1px solid var(--color-border);
-  }
-  .dash-table .periodo { font-weight: 700; color: var(--color-accent); font-family: 'SF Mono', 'Menlo', monospace; }
-  .dash-table .obs { color: var(--color-text-muted); font-style: italic; font-size: 0.7rem; }
+  /* ── TIMELINE ── */
+  .tl { display: flex; gap: 4px; align-items: flex-end; justify-content: space-between; margin-bottom: 2.5rem; position: relative; }
+  .tl::before { content: ''; position: absolute; top: 18px; left: 18px; right: 18px; height: 1px; background: var(--d-border); z-index: 0; }
+  .tl-item { display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0; position: relative; z-index: 1; }
+  .tl-dot { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .tl-dot.pos { background: var(--d-green-bg); color: var(--d-green); }
+  .tl-dot.neg { background: var(--d-red-bg); color: var(--d-red); }
+  .tl-dot.neu { background: var(--d-amber-bg); color: var(--d-amber); }
+  .tl-dot.pending { background: var(--d-bg-card-alt); color: var(--d-text3); border: 2px dashed var(--d-border-light); font-size: 16px; }
+  .tl-yr { font-size: 12px; font-weight: 600; color: var(--d-text); margin-top: 6px; }
+  .tl-res { font-size: 11px; color: var(--d-text3); margin-top: 2px; white-space: nowrap; }
 
-  .dash-note {
-    font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.5;
-    padding: 10px 12px; border-top: 1px solid var(--color-border);
-  }
+  /* ── KPI CARDS ── */
+  .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d-border); border: 1px solid var(--d-border); border-radius: var(--radius); overflow: hidden; margin-bottom: 2.5rem; }
+  .kpi { background: var(--d-bg-card); padding: 1.25rem; }
+  .kpi-label { font-size: 11px; font-weight: 500; color: var(--d-text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .kpi-value { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 800; line-height: 1.1; font-family: 'SF Mono', 'Menlo', monospace; }
+  .kpi-value.danger { color: var(--d-red); }
+  .kpi-value.warning { color: var(--d-amber); }
+  .kpi-note { font-size: 11px; color: var(--d-text3); margin-top: 4px; }
+  .kpi-explainer { font-size: 11.5px; color: var(--d-text2); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--d-border-light); line-height: 1.5; }
 
-  .dash-footer {
-    margin-top: 32px; padding: 16px;
-    background: var(--color-bg-card); border: 1px solid var(--color-border);
-    border-radius: var(--radius); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.7;
-  }
-  .dash-footer-title { font-weight: 700; color: var(--color-text); margin-bottom: 6px; font-size: 0.78rem; }
-  .dash-footer-links { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
-  .dash-footer-link {
-    text-decoration: none; border-radius: var(--radius);
-    padding: 5px 12px; font-size: 0.72rem; font-weight: 600;
-    border: 1px solid; transition: opacity 0.2s;
-  }
-  .dash-footer-link:hover { opacity: 0.8; }
+  /* ── SECTIONS ── */
+  .d-section { margin-bottom: 2.5rem; }
+  .d-section-title { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--d-text3); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--d-border-light); }
 
+  /* ── CHART ── */
+  .d-chart-wrap { position: relative; width: 100%; height: 300px; background: var(--d-bg-card); border: 1px solid var(--d-border); border-radius: var(--radius); padding: 1.25rem 1rem 0.75rem; }
+
+  /* ── INCOME COMPOSITION ── */
+  .income-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+  .income-bar-wrap { display: flex; flex-direction: column; gap: 10px; }
+  .income-row { display: flex; flex-direction: column; gap: 3px; }
+  .income-row-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .income-row-label { font-size: 13px; font-weight: 500; color: var(--d-text); }
+  .income-row-value { font-size: 13px; font-weight: 600; color: var(--d-text2); }
+  .income-bar { height: 8px; border-radius: 4px; background: var(--d-bg-card-alt); overflow: hidden; }
+  .income-bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s ease; }
+  .income-chart-wrap { position: relative; width: 100%; aspect-ratio: 1; max-width: 220px; margin: 0 auto; }
+
+  /* ── PASSTHROUGH ── */
+  .passthrough { background: var(--d-bg-card-alt); border: 1px solid var(--d-border); border-radius: var(--radius); padding: 1.25rem; display: flex; align-items: center; gap: 1rem; }
+  .passthrough-icon { font-size: 28px; flex-shrink: 0; opacity: 0.6; }
+  .passthrough-text { font-size: 13px; color: var(--d-text2); line-height: 1.6; }
+  .passthrough-text strong { color: var(--d-text); font-weight: 600; }
+
+  /* ── QUESTIONS ── */
+  .q-list { display: flex; flex-direction: column; gap: 6px; }
+  .q-card { background: var(--d-bg-card); border: 1px solid var(--d-border); border-left: 3px solid var(--d-accent); border-radius: 0 6px 6px 0; padding: 12px 16px; font-size: 13px; color: var(--d-text2); line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  .d-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--d-border-light); font-size: 11px; color: var(--d-text3); line-height: 1.7; }
+  .d-footer a { color: var(--d-accent); text-decoration: none; }
+  .d-footer a:hover { color: var(--d-accent-dark); text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
-    .dash-title { font-size: 1.2rem; }
-    .dash-metric { min-width: 120px; }
-    .dash-comp-wrap { flex-direction: column; }
-    .dash-comp-chart { flex: none; width: 100%; display: flex; justify-content: center; }
-    .dash-chart-wrap { height: 240px; }
+    .kpis { grid-template-columns: 1fr; }
+    .income-grid { grid-template-columns: 1fr; }
+    .tl { gap: 2px; }
+    .tl-dot { width: 30px; height: 30px; font-size: 11px; }
+    .tl-yr { font-size: 11px; }
+    .tl-res { font-size: 10px; }
+    .passthrough { flex-direction: column; text-align: center; }
   }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 
-<!-- HEADER -->
-<div style="margin-bottom:8px;">
-  <div class="dash-badge">📊 LIKAN — Transparencia Deporte</div>
-  <h1 class="dash-title">Radiografia financiera: Federacion de Balonmano</h1>
-  <p class="dash-subtitle">Balances Tributarios 2018-2024 · RUT 65.040.479-3 · Ramon Cruz 1176, Ñuñoa</p>
-</div>
+<div class="dash">
 
-<!-- METRICAS -->
-<div class="dash-metrics">
-  <div class="dash-metric">
-    <div class="bar" style="background:#f87171"></div>
-    <div class="dash-metric-label">📉 Deficit 2022</div>
-    <div class="dash-metric-value" style="color:#f87171">-$70,2M</div>
-    <div class="dash-metric-sub">Peor resultado de la serie</div>
+  <!-- HEADER -->
+  <div class="dash-header">
+    <div class="dash-header-label">LIKAN · Transparencia Deporte · Serie Balonmano</div>
+    <h1>Siete anos en numeros: radiografia financiera 2018-2024</h1>
+    <div class="dash-header-sub">Balances tributarios de la Federacion Deportiva Nacional de Balonmano (RUT 65.040.479-3), analizados cifra por cifra. Datos 2025 pendientes de publicacion.</div>
   </div>
-  <div class="dash-metric">
-    <div class="bar" style="background:#f87171"></div>
-    <div class="dash-metric-label">📊 Resultado acumulado</div>
-    <div class="dash-metric-value" style="color:#f87171">-$26,1M</div>
-    <div class="dash-metric-sub">Suma 2018-2024</div>
-  </div>
-  <div class="dash-metric">
-    <div class="bar" style="background:#60a5fa"></div>
-    <div class="dash-metric-label">🏛️ Dependencia IND</div>
-    <div class="dash-metric-value" style="color:#60a5fa">75-97%</div>
-    <div class="dash-metric-sub">Rango segun año</div>
-  </div>
-  <div class="dash-metric">
-    <div class="bar" style="background:var(--color-accent)"></div>
-    <div class="dash-metric-label">💼 Directorio 2024</div>
-    <div class="dash-metric-value" style="color:var(--color-accent)">$18,8M</div>
-    <div class="dash-metric-sub">112% del resultado neto</div>
-  </div>
-  <div class="dash-metric">
-    <div class="bar" style="background:#34d399"></div>
-    <div class="dash-metric-label">📈 Superavit 2023</div>
-    <div class="dash-metric-value" style="color:#34d399">+$39,6M</div>
-    <div class="dash-metric-sub">Mejor resultado historico</div>
-  </div>
-</div>
 
-<!-- SECCION 1: EVOLUCION -->
-<div class="dash-section">
-  <span class="dash-num">1</span>
-  <h2>Evolucion financiera</h2>
-</div>
-<div class="dash-tabs" id="tabs-main">
-  <button class="dash-tab active" data-chart="resultado">Resultado neto</button>
-  <button class="dash-tab" data-chart="ingresos">Ingresos vs Gastos</button>
-  <button class="dash-tab" data-chart="cobertura">Cobertura</button>
-</div>
-<div class="dash-card">
-  <div class="dash-chart-wrap">
-    <canvas id="mainChart"></canvas>
+  <!-- TIMELINE -->
+  <div class="d-section">
+    <div class="d-section-title">Resultado neto por ano</div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-dot pos">+</div><div class="tl-yr">2018</div><div class="tl-res">+$8,0M</div></div>
+      <div class="tl-item"><div class="tl-dot neg">-</div><div class="tl-yr">2019</div><div class="tl-res">-$10,4M</div></div>
+      <div class="tl-item"><div class="tl-dot neu">~</div><div class="tl-yr">2020</div><div class="tl-res">+$0,4M</div></div>
+      <div class="tl-item"><div class="tl-dot neg">-</div><div class="tl-yr">2021</div><div class="tl-res">-$10,2M</div></div>
+      <div class="tl-item"><div class="tl-dot neg">-</div><div class="tl-yr">2022</div><div class="tl-res">-$70,2M</div></div>
+      <div class="tl-item"><div class="tl-dot pos">+</div><div class="tl-yr">2023</div><div class="tl-res">+$39,6M</div></div>
+      <div class="tl-item"><div class="tl-dot pos">+</div><div class="tl-yr">2024</div><div class="tl-res">+$16,7M</div></div>
+      <div class="tl-item"><div class="tl-dot pending">?</div><div class="tl-yr">2025</div><div class="tl-res">Pendiente</div></div>
+    </div>
   </div>
-</div>
 
-<!-- SECCION 2: SEMAFORO -->
-<div class="dash-section">
-  <span class="dash-num">2</span>
-  <h2>Semaforo financiero anual</h2>
-</div>
-<div class="dash-semaforo">
-  <div class="dash-sem-item">
-    <div class="dash-sem-emoji">🟢</div>
-    <div class="dash-sem-year">2018</div>
-    <div class="dash-sem-amount" style="color:#34d399">+8,0M</div>
-    <div class="dash-sem-label">Superavit solido</div>
+  <!-- KPIs -->
+  <div class="kpis">
+    <div class="kpi">
+      <div class="kpi-label">Resultado acumulado</div>
+      <div class="kpi-value danger">-$26,1M</div>
+      <div class="kpi-note">Suma neta 2018-2024</div>
+      <div class="kpi-explainer">En 7 anos, la federacion gasto $26,1 millones mas de lo que recibio.</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Dependencia estatal</div>
+      <div class="kpi-value">75%</div>
+      <div class="kpi-note">IND sobre ingresos 2024</div>
+      <div class="kpi-explainer">De cada $100 que entran a la federacion, $75 vienen del Estado. Sin esos fondos, la institucion no podria funcionar.</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Directorio vs. resultado</div>
+      <div class="kpi-value warning">112%</div>
+      <div class="kpi-note">Gastos directorio / superavit 2024</div>
+      <div class="kpi-explainer">Mantener la mesa directiva costo mas que todo lo que la federacion logro ahorrar en el ano.</div>
+    </div>
   </div>
-  <div class="dash-sem-item">
-    <div class="dash-sem-emoji">🔴</div>
-    <div class="dash-sem-year">2019</div>
-    <div class="dash-sem-amount" style="color:#f87171">-10,4M</div>
-    <div class="dash-sem-label">Activos casi en cero</div>
-  </div>
-  <div class="dash-sem-item">
-    <div class="dash-sem-emoji">🟡</div>
-    <div class="dash-sem-year">2020</div>
-    <div class="dash-sem-amount" style="color:var(--color-accent)">+0,4M</div>
-    <div class="dash-sem-label">Equilibrio minimo (COVID)</div>
-  </div>
-  <div class="dash-sem-item">
-    <div class="dash-sem-emoji">🔴</div>
-    <div class="dash-sem-year">2021</div>
-    <div class="dash-sem-amount" style="color:#f87171">-10,2M</div>
-    <div class="dash-sem-label">Pasivos superan activos</div>
-  </div>
-  <div class="dash-sem-item">
-    <div class="dash-sem-emoji">🔴</div>
-    <div class="dash-sem-year">2022</div>
-    <div class="dash-sem-amount" style="color:#f87171">-70,2M</div>
-    <div class="dash-sem-label">Deficit historico</div>
-  </div>
-  <div class="dash-sem-item">
-    <div class="dash-sem-emoji">🟢</div>
-    <div class="dash-sem-year">2023</div>
-    <div class="dash-sem-amount" style="color:#34d399">+39,6M</div>
-    <div class="dash-sem-label">Mejor resultado</div>
-  </div>
-  <div class="dash-sem-item">
-    <div class="dash-sem-emoji">🟡</div>
-    <div class="dash-sem-year">2024</div>
-    <div class="dash-sem-amount" style="color:var(--color-accent)">+16,7M</div>
-    <div class="dash-sem-label">Superavit fragil</div>
-  </div>
-</div>
 
-<!-- SECCION 3: COMPOSICION -->
-<div class="dash-section">
-  <span class="dash-num">3</span>
-  <h2>Composicion de ingresos</h2>
-</div>
-<div class="dash-tabs" id="tabs-comp">
-  <button class="dash-tab active" id="comp-2024-btn" data-comp="2024">2024</button>
-  <button class="dash-tab" id="comp-2022-btn" data-comp="2022">2022</button>
-</div>
-<div class="dash-comp-wrap">
-  <div class="dash-comp-chart">
-    <canvas id="pieChart" width="180" height="180"></canvas>
+  <!-- BAR CHART -->
+  <div class="d-section">
+    <div class="d-section-title">Resultado neto anual (millones CLP)</div>
+    <div class="d-chart-wrap">
+      <canvas id="rChart"></canvas>
+    </div>
   </div>
-  <div class="dash-comp-legend" id="composicionLegend"></div>
-</div>
 
-<!-- SECCION 4: MULTAS -->
-<div class="dash-section">
-  <span class="dash-num">4</span>
-  <h2>Multas pagadas</h2>
-</div>
-<div class="dash-card">
-  <div style="position:relative;height:200px;">
-    <canvas id="multasChart"></canvas>
+  <!-- INCOME COMPOSITION -->
+  <div class="d-section">
+    <div class="d-section-title">Composicion de ingresos 2024</div>
+    <div class="income-grid">
+      <div class="income-bar-wrap">
+        <div class="income-row">
+          <div class="income-row-header">
+            <span class="income-row-label">Proyectos IND</span>
+            <span class="income-row-value">$309,5M <span style="color:var(--d-text3);font-weight:400;">(74,9%)</span></span>
+          </div>
+          <div class="income-bar"><div class="income-bar-fill" style="width:74.9%;background:var(--d-red);opacity:0.7;"></div></div>
+        </div>
+        <div class="income-row">
+          <div class="income-row-header">
+            <span class="income-row-label">Otros ingresos</span>
+            <span class="income-row-value">$84,4M <span style="color:var(--d-text3);font-weight:400;">(20,4%)</span></span>
+          </div>
+          <div class="income-bar"><div class="income-bar-fill" style="width:20.4%;background:var(--d-accent);"></div></div>
+        </div>
+        <div class="income-row">
+          <div class="income-row-header">
+            <span class="income-row-label">Liga</span>
+            <span class="income-row-value">$19,3M <span style="color:var(--d-text3);font-weight:400;">(4,7%)</span></span>
+          </div>
+          <div class="income-bar"><div class="income-bar-fill" style="width:4.7%;background:var(--d-green);"></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="income-chart-wrap">
+          <canvas id="incomeChart"></canvas>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="dash-note">
-    ⚠️ Dato 2023 no disponible en el balance consultado. La cifra 2024 ($1,67M) representa un aumento de 238% respecto a 2021. Los balances no detallan el origen ni el tipo de estas sanciones.
-  </div>
-</div>
 
-<!-- SECCION 5: FIRMANTES -->
-<div class="dash-section">
-  <span class="dash-num">5</span>
-  <h2>Firmantes segun balances</h2>
-</div>
-<div class="dash-card" style="padding:0;overflow:hidden;">
-  <div class="dash-table-wrap">
-    <table class="dash-table">
-      <thead>
-        <tr>
-          <th>Periodo</th>
-          <th>Presidente</th>
-          <th>Rep. Legal</th>
-          <th>Tesorero</th>
-          <th>Contador/a</th>
-          <th>Observacion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="periodo">2018-2019</td>
-          <td>No especificado</td>
-          <td>Marcel Mancilla Bravo</td>
-          <td>No especificado</td>
-          <td>Victor Sanhueza Campos</td>
-          <td class="obs">No se indica cargo de presidente ni tesorero</td>
-        </tr>
-        <tr>
-          <td class="periodo">2020</td>
-          <td>—</td>
-          <td>—</td>
-          <td>—</td>
-          <td>—</td>
-          <td class="obs">No se mencionan cargos en el balance</td>
-        </tr>
-        <tr>
-          <td class="periodo">2021</td>
-          <td>No identificado</td>
-          <td>—</td>
-          <td>No identificado</td>
-          <td>—</td>
-          <td class="obs">Aparecen roles pero sin nombres</td>
-        </tr>
-        <tr>
-          <td class="periodo">2022-2023</td>
-          <td>Juan Pablo Montes</td>
-          <td>—</td>
-          <td>Victor Sanhueza Campos</td>
-          <td>No especificado</td>
-          <td class="obs">—</td>
-        </tr>
-        <tr>
-          <td class="periodo">2024</td>
-          <td>Elizardo Vera Flores</td>
-          <td>—</td>
-          <td>Jaime Guido Muñoz Fernandez</td>
-          <td>Carol Rojas Alvarez</td>
-          <td class="obs">—</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- PASSTHROUGH -->
+  <div class="d-section">
+    <div class="passthrough">
+      <div class="passthrough-icon">🔄</div>
+      <div class="passthrough-text">
+        <strong>Modelo pass-through:</strong> En 2024, entraron $309,5M del IND y se gastaron exactamente $309,5M en proyectos IND. Los fondos pasan por la federacion sin generar margen operativo. La entidad se financia con solo el 25% restante.
+      </div>
+    </div>
   </div>
-  <div class="dash-note">
-    ℹ️ Informacion extraida textualmente de cada balance tributario. En 2018-2019 solo figuran Rep. Legal y Contador, sin mencion de presidente ni tesorero. En 2020 no se indican cargos. En 2021 aparecen los cargos (Presidente, Tesorero) pero sin nombres asociados. Desde 2022 se identifican nombres y cargos.
-  </div>
-</div>
 
-<!-- FOOTER -->
-<div class="dash-footer">
-  <div class="dash-footer-title">📋 Metodologia y limitaciones</div>
-  Cifras expresadas en millones de pesos chilenos nominales, sin ajuste por inflacion.
-  Analisis financiero procesado por LIKAN, Asistente AI.
-  Fuente: Balances Tributarios de 8 Columnas (2018-2024), Federacion Deportiva Nacional de Balonmano
-  (RUT 65.040.479-3), documentos de acceso publico bajo
-  <a href="https://www.bcn.cl/leychile/navegar?idNorma=276363" target="_blank" rel="noopener" style="color:var(--color-accent)">Ley 20.285 de Transparencia</a>.
-  <br><br>
-  <strong style="color:var(--color-text)">⚠️ Limitaciones:</strong> Los balances tributarios no equivalen a estados financieros auditados.
-  No contienen notas explicativas ni flujo de efectivo. Las cifras no estan ajustadas por IPC.
-  La tabla de firmantes refleja exclusivamente lo que aparece escrito en los documentos; no implica juicio sobre roles ni funciones.
-  <div class="dash-footer-links">
-    <a href="/documentos/" class="dash-footer-link" style="color:var(--color-accent);border-color:var(--color-accent)">📄 Ver balances</a>
-    <a href="/noticias/2026/04/03/paradoja-balonmano-chileno/" class="dash-footer-link" style="color:#60a5fa;border-color:#60a5fa">📰 Leer articulo</a>
+  <!-- QUESTIONS -->
+  <div class="d-section">
+    <div class="d-section-title">Preguntas abiertas</div>
+    <div class="q-list">
+      <div class="q-card">Que son los "otros ingresos" por $84,4M que aparecen en 2024? No hay detalle en los balances tributarios.</div>
+      <div class="q-card">Por que las multas pagadas se triplicaron entre 2021 y 2024, de $494 mil a $1,67M? Quien las impone?</div>
+      <div class="q-card">Existe auditoria externa independiente? Los balances tributarios no equivalen a estados financieros auditados.</div>
+    </div>
   </div>
+
+  <!-- FOOTER -->
+  <div class="d-footer">
+    <strong>Fuente:</strong> Balances Tributarios de 8 Columnas (2018-2024), Federacion Deportiva Nacional de Balonmano, RUT 65.040.479-3. Documentacion publica obtenida bajo <a href="https://www.bcn.cl/leychile/navegar?idNorma=276363" target="_blank" rel="noopener">Ley 20.285</a>. Cifras en pesos chilenos nominales, sin ajuste por inflacion.<br>
+    <strong>Analisis:</strong> LIKAN · <a href="/">Transparencia Deporte</a> · Abril 2026<br>
+    📄 <a href="/documentos/">Ver todos los balances tributarios y documentacion fuente</a>
+    · 📰 <a href="/noticias/2026/04/03/paradoja-balonmano-chileno/">Leer articulo</a>
+  </div>
+
 </div>
 
 <script>
-var years = ['2018','2019','2020','2021','2022','2023','2024'];
-var resultados = [8.0, -10.4, 0.35, -10.2, -70.2, 39.6, 16.7];
-var ingresos_data = [34.3, 70.9, 23.9, 61.5, 438.5, 363.0, 413.1];
-var gastos_data = [26.3, 81.3, 23.5, 71.7, 508.7, 323.4, 396.5];
-var coberturas = [1.52, 0.07, 1.01, 0.88, 0.56, 3.54, 1.07];
-
-var composicionData = {
-  '2024': {
-    labels: ['Proyectos IND', 'Otros Ingresos', 'Ingreso Liga'],
-    values: [309.5, 84.4, 19.3],
-    pcts: ['74,9%', '20,4%', '4,7%'],
-    colors: ['#60a5fa','#22d3ee','#34d399'],
-    note: 'En 2022, el IND representaba el 96,7% de los ingresos. En 2024 bajo a 74,9% gracias a la aparicion de "Otros Ingresos" ($84,4M).'
-  },
-  '2022': {
-    labels: ['Proyectos IND', 'Ingreso Liga'],
-    values: [424.2, 14.3],
-    pcts: ['96,7%', '3,3%'],
-    colors: ['#60a5fa','#34d399'],
-    note: 'Dependencia casi total del Estado. Los $424,2M del IND son pass-through: entran y salen sin generar margen.'
-  }
-};
+var results = [8.02, -10.37, 0.35, -10.23, -70.19, 39.65, 16.66, null];
+var barColors = results.map(function(v) {
+  if (v === null) return 'rgba(255,255,255,0.08)';
+  return v >= 0 ? '#34d399' : '#f87171';
+});
+var chartData = results.map(function(v) { return v === null ? 0 : v; });
 
 Chart.defaults.color = '#8b949e';
 Chart.defaults.borderColor = '#21262d';
 Chart.defaults.font.family = "'Source Sans 3', system-ui, sans-serif";
 
-var mainChart;
-
-function getMainCtx() {
-  var wrap = document.querySelector('.dash-chart-wrap');
-  var old = document.getElementById('mainChart');
-  if (old) old.remove();
-  var c = document.createElement('canvas');
-  c.id = 'mainChart';
-  wrap.appendChild(c);
-  return c.getContext('2d');
-}
-
-function buildResultadoChart() {
-  return {
-    type: 'bar',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'Resultado Neto ($M CLP)',
-        data: resultados,
-        backgroundColor: resultados.map(function(v) { return v >= 0 ? 'rgba(52,211,153,0.7)' : 'rgba(248,113,113,0.7)'; }),
-        borderColor: resultados.map(function(v) { return v >= 0 ? '#34d399' : '#f87171'; }),
-        borderWidth: 2, borderRadius: 4
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(ctx) { return '$' + ctx.parsed.y.toFixed(1) + 'M CLP'; } } } },
-      scales: {
-        y: { ticks: { callback: function(v) { return '$' + v + 'M'; } }, grid: { color: '#1e293b' } },
-        x: { grid: { display: false } }
-      }
-    }
-  };
-}
-
-function buildIngresosChart() {
-  return {
-    type: 'bar',
-    data: {
-      labels: years,
-      datasets: [
-        { label: 'Ingresos', data: ingresos_data, backgroundColor: 'rgba(52,211,153,0.7)', borderColor: '#34d399', borderWidth: 2, borderRadius: 4 },
-        { label: 'Gastos', data: gastos_data, backgroundColor: 'rgba(248,113,113,0.7)', borderColor: '#f87171', borderWidth: 2, borderRadius: 4 }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(1) + 'M'; } } } },
-      scales: {
-        y: { ticks: { callback: function(v) { return '$' + v + 'M'; } }, grid: { color: '#1e293b' } },
-        x: { grid: { display: false } }
-      }
-    }
-  };
-}
-
-function buildCoberturaChart() {
-  return {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [
-        {
-          label: 'Cobertura (Activo/Pasivo)',
-          data: coberturas,
-          borderColor: '#22d3ee', backgroundColor: 'rgba(34,211,238,0.08)',
-          borderWidth: 3, fill: true, tension: 0.3, pointRadius: 5, pointBackgroundColor: '#22d3ee'
-        },
-        {
-          label: 'Umbral 1x',
-          data: Array(years.length).fill(1),
-          borderColor: '#f59e0b', borderWidth: 1, borderDash: [5, 5],
-          pointRadius: 0, fill: false
-        }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        tooltip: {
-          filter: function(item) { return item.datasetIndex === 0; },
-          callbacks: { label: function(ctx) { var v = ctx.parsed.y; return 'Cobertura: ' + v.toFixed(2) + 'x' + (v < 1 ? ' — Insolvencia tecnica' : ''); } }
-        },
-        legend: {
-          labels: { filter: function(item) { return item.text !== 'Umbral 1x'; } }
-        }
-      },
-      scales: {
-        y: { ticks: { callback: function(v) { return v + 'x'; } }, grid: { color: '#1e293b' } },
-        x: { grid: { display: false } }
-      }
-    }
-  };
-}
-
-function switchChart(type) {
-  if (mainChart) mainChart.destroy();
-  var ctx = getMainCtx();
-  var config;
-  if (type === 'resultado') config = buildResultadoChart();
-  else if (type === 'ingresos') config = buildIngresosChart();
-  else config = buildCoberturaChart();
-  mainChart = new Chart(ctx, config);
-}
-
-document.getElementById('tabs-main').addEventListener('click', function(e) {
-  var btn = e.target.closest('[data-chart]');
-  if (!btn) return;
-  this.querySelectorAll('.dash-tab').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  switchChart(btn.getAttribute('data-chart'));
-});
-
-mainChart = new Chart(getMainCtx(), buildResultadoChart());
-
-// PIE CHART
-var pieChart;
-
-function getPieCtx() {
-  var wrap = document.querySelector('.dash-comp-chart');
-  var old = document.getElementById('pieChart');
-  if (old) old.remove();
-  var c = document.createElement('canvas');
-  c.id = 'pieChart';
-  c.width = 180;
-  c.height = 180;
-  wrap.appendChild(c);
-  return c.getContext('2d');
-}
-
-function renderComposicion(year) {
-  var d = composicionData[year];
-  if (pieChart) pieChart.destroy();
-  pieChart = new Chart(getPieCtx(), {
-    type: 'doughnut',
-    data: { labels: d.labels, datasets: [{ data: d.values, backgroundColor: d.colors, borderWidth: 0, hoverOffset: 6 }] },
-    options: { responsive: false, cutout: '60%', plugins: { legend: { display: false } } }
-  });
-
-  var container = document.getElementById('composicionLegend');
-  container.textContent = '';
-
-  d.labels.forEach(function(label, i) {
-    var item = document.createElement('div');
-    item.className = 'dash-leg-item';
-
-    var dot = document.createElement('div');
-    dot.className = 'dash-leg-dot';
-    dot.style.background = d.colors[i];
-
-    var info = document.createElement('div');
-    var name = document.createElement('div');
-    name.className = 'dash-leg-name';
-    name.textContent = label;
-    var sub = document.createElement('div');
-    sub.className = 'dash-leg-sub';
-    sub.textContent = '$' + d.values[i].toFixed(1) + 'M — ' + d.pcts[i];
-    info.appendChild(name);
-    info.appendChild(sub);
-
-    item.appendChild(dot);
-    item.appendChild(info);
-    container.appendChild(item);
-  });
-
-  var note = document.createElement('div');
-  note.className = 'dash-comp-note';
-  note.textContent = d.note;
-  container.appendChild(note);
-}
-
-function switchComposicion(year) {
-  document.getElementById('comp-2024-btn').classList.toggle('active', year === '2024');
-  document.getElementById('comp-2022-btn').classList.toggle('active', year === '2022');
-  renderComposicion(year);
-}
-
-document.getElementById('tabs-comp').addEventListener('click', function(e) {
-  var btn = e.target.closest('[data-comp]');
-  if (!btn) return;
-  switchComposicion(btn.getAttribute('data-comp'));
-});
-
-renderComposicion('2024');
-
-// MULTAS
-new Chart(document.getElementById('multasChart'), {
+new Chart(document.getElementById('rChart'), {
   type: 'bar',
   data: {
-    labels: ['2021', '2022', '2024'],
+    labels: ['2018','2019','2020','2021','2022','2023','2024','2025'],
     datasets: [{
-      label: 'Multas',
-      data: [494, 480, 1671],
-      backgroundColor: ['rgba(245,158,11,0.7)', 'rgba(245,158,11,0.7)', 'rgba(248,113,113,0.7)'],
-      borderColor: ['#f59e0b', '#f59e0b', '#f87171'],
-      borderWidth: 2, borderRadius: 4, maxBarThickness: 60, barPercentage: 0.5
+      data: chartData,
+      backgroundColor: barColors,
+      borderRadius: 3,
+      maxBarThickness: 48,
+      borderWidth: results.map(function(v) { return v === null ? 1.5 : 0; }),
+      borderColor: results.map(function(v) { return v === null ? 'rgba(255,255,255,0.15)' : 'transparent'; })
+    }]
+  },
+  plugins: [{
+    id: 'pendingLabel',
+    afterDraw: function(chart) {
+      var meta = chart.getDatasetMeta(0);
+      var bar = meta.data[7];
+      if (!bar) return;
+      var ctx = chart.ctx;
+      ctx.save();
+      ctx.font = "500 11px 'Source Sans 3', sans-serif";
+      ctx.fillStyle = '#8b949e';
+      ctx.textAlign = 'center';
+      ctx.fillText('?', bar.x, bar.y - 8);
+      ctx.restore();
+    }
+  }],
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#171c28',
+        titleFont: { size: 12 },
+        bodyFont: { size: 13 },
+        padding: 10,
+        cornerRadius: 4,
+        callbacks: {
+          title: function(ctx) { return ctx[0].label; },
+          label: function(ctx) {
+            if (ctx.dataIndex === 7) return 'Datos pendientes';
+            var v = ctx.parsed.y;
+            return (v < 0 ? '-' : '+') + '$' + Math.abs(v).toFixed(1) + 'M CLP';
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        ticks: {
+          callback: function(v) { return (v < 0 ? '-' : '') + '$' + Math.abs(v) + 'M'; },
+          font: { size: 11 }
+        },
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        border: { display: false }
+      },
+      x: {
+        ticks: {
+          font: { size: 12, weight: 500 },
+          color: function(ctx) { return ctx.index === 7 ? '#555' : '#8b949e'; }
+        },
+        grid: { display: false },
+        border: { display: false }
+      }
+    }
+  }
+});
+
+new Chart(document.getElementById('incomeChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Proyectos IND', 'Otros ingresos', 'Liga'],
+    datasets: [{
+      data: [309.5, 84.4, 19.3],
+      backgroundColor: ['rgba(248,113,113,0.65)', '#d4a012', '#34d399'],
+      borderWidth: 2,
+      borderColor: '#171c28',
+      hoverOffset: 6
     }]
   },
   options: {
-    responsive: true, maintainAspectRatio: false,
+    responsive: true,
+    maintainAspectRatio: true,
+    cutout: '62%',
     plugins: {
       legend: { display: false },
-      tooltip: { callbacks: { label: function(ctx) { return '$' + ctx.parsed.y.toLocaleString('es-CL') + ' mil CLP'; } } }
-    },
-    scales: {
-      y: { beginAtZero: true, ticks: { callback: function(v) { return '$' + v + 'K'; } }, grid: { color: '#1e293b' } },
-      x: { grid: { display: false } }
+      tooltip: {
+        backgroundColor: '#171c28',
+        bodyFont: { size: 12 },
+        padding: 10,
+        cornerRadius: 4,
+        callbacks: {
+          label: function(ctx) {
+            var total = ctx.dataset.data.reduce(function(a, b) { return a + b; }, 0);
+            var pct = ((ctx.parsed / total) * 100).toFixed(1);
+            return ' $' + ctx.parsed + 'M (' + pct + '%)';
+          }
+        }
+      }
     }
   }
 });
