@@ -136,7 +136,7 @@ permalink: /dashboard-balonmano/
   }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBSSt0DLGe1DUUW2JBJhEOEIBpOLWSYoqMHhjLMJRwDmPODtMEAVIoMKTszKrMYbgJJQkGPHA5C8VHFMd0Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- HEADER -->
 <div style="margin-bottom:8px;">
@@ -505,13 +505,24 @@ document.getElementById('tabs-main').addEventListener('click', function(e) {
 mainChart = new Chart(getMainCtx(), buildResultadoChart());
 
 // PIE CHART
-var pieCtx = document.getElementById('pieChart').getContext('2d');
 var pieChart;
+
+function getPieCtx() {
+  var wrap = document.querySelector('.dash-comp-chart');
+  var old = document.getElementById('pieChart');
+  if (old) old.remove();
+  var c = document.createElement('canvas');
+  c.id = 'pieChart';
+  c.width = 180;
+  c.height = 180;
+  wrap.appendChild(c);
+  return c.getContext('2d');
+}
 
 function renderComposicion(year) {
   var d = composicionData[year];
   if (pieChart) pieChart.destroy();
-  pieChart = new Chart(pieCtx, {
+  pieChart = new Chart(getPieCtx(), {
     type: 'doughnut',
     data: { labels: d.labels, datasets: [{ data: d.values, backgroundColor: d.colors, borderWidth: 0, hoverOffset: 6 }] },
     options: { responsive: false, cutout: '60%', plugins: { legend: { display: false } } }
@@ -564,8 +575,7 @@ document.getElementById('tabs-comp').addEventListener('click', function(e) {
 renderComposicion('2024');
 
 // MULTAS
-var multasCtx = document.getElementById('multasChart').getContext('2d');
-new Chart(multasCtx, {
+new Chart(document.getElementById('multasChart'), {
   type: 'bar',
   data: {
     labels: ['2021', '2022', '2024'],
