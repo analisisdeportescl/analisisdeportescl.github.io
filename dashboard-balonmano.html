@@ -127,9 +127,9 @@ permalink: /dashboard-balonmano/
       <div class="tl-item"><div class="tl-dot pos">+</div><div class="tl-yr">2018</div><div class="tl-res">+$8,0M</div></div>
       <div class="tl-item"><div class="tl-dot neg">-</div><div class="tl-yr">2019</div><div class="tl-res">-$10,4M</div></div>
       <div class="tl-item"><div class="tl-dot neu">~</div><div class="tl-yr">2020</div><div class="tl-res">+$0,4M</div></div>
-      <div class="tl-item"><div class="tl-dot pending">?</div><div class="tl-yr">2021</div><div class="tl-res">En revision</div></div>
-      <div class="tl-item"><div class="tl-dot pending">?</div><div class="tl-yr">2022</div><div class="tl-res">En revision</div></div>
-      <div class="tl-item"><div class="tl-dot pending">?</div><div class="tl-yr">2023</div><div class="tl-res">En revision</div></div>
+      <div class="tl-item"><div class="tl-dot neg">-</div><div class="tl-yr">2021</div><div class="tl-res">-$10,2M</div></div>
+      <div class="tl-item"><div class="tl-dot neg">-</div><div class="tl-yr">2022</div><div class="tl-res">-$70,2M</div></div>
+      <div class="tl-item"><div class="tl-dot pos">+</div><div class="tl-yr">2023</div><div class="tl-res">+$39,6M</div></div>
       <div class="tl-item"><div class="tl-dot pos">+</div><div class="tl-yr">2024</div><div class="tl-res">+$16,7M</div></div>
       <div class="tl-item"><div class="tl-dot pending">?</div><div class="tl-yr">2025</div><div class="tl-res">Pendiente</div></div>
     </div>
@@ -139,9 +139,9 @@ permalink: /dashboard-balonmano/
   <div class="kpis">
     <div class="kpi">
       <div class="kpi-label">Resultado acumulado</div>
-      <div class="kpi-value" style="color:var(--d-text3);">En revision</div>
+      <div class="kpi-value danger">-$26,1M</div>
       <div class="kpi-note">Suma neta 2018-2024</div>
-      <div class="kpi-explainer">Estamos revisando un detalle en las cifras de 2021, 2022 y 2023. El acumulado sera actualizado proximamente.</div>
+      <div class="kpi-explainer">En 7 años, la federacion gasto $26,1 millones mas de lo que recibio.</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Dependencia estatal</div>
@@ -236,7 +236,7 @@ permalink: /dashboard-balonmano/
 </div>
 
 <script>
-var results = [8.02, -10.37, 0.35, null, null, null, 16.66, null];
+var results = [8.02, -10.37, 0.35, -10.23, -70.19, 39.65, 16.66, null];
 var barColors = results.map(function(v) {
   if (v === null) return 'rgba(255,255,255,0.08)';
   return v >= 0 ? '#34d399' : '#f87171';
